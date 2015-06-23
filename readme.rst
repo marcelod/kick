@@ -9,4 +9,4 @@ License
 *******
 
 Please see the `license
-agreement <https://github.com/marcelod/kick/license.rst>`_.
+agreement <https://github.com/marcelod/kick/blob/master/LICENSE>`_.
