@@ -14,7 +14,9 @@
         <!-- favicon.ico and apple-touch-icon.png -->
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="<?php echo assets_url('css/bootstrap.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
+        <!-- Font-Awesome CSS -->
+        <link rel="stylesheet" href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css'); ?>">
         <!-- Custom styles -->
         <link rel="stylesheet" href="<?php echo assets_url('css/main.css'); ?>">
         <?php echo $css; ?>
@@ -30,8 +32,8 @@
         <?php echo $body; ?>
         <!-- / -->
 
-        <script src="<?php echo assets_url('js/jquery.min.js'); ?>"></script>
-        <script src="<?php echo assets_url('js/bootstrap.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bower_components/jquery/dist/jquery.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
         <script src="<?php echo assets_url('js/main.js'); ?>"></script>
         <!-- Extra javascript -->
         <?php echo $js; ?>

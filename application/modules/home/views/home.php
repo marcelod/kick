@@ -1,89 +1,165 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Welcome to CodeIgniter</title>
+<!-- Header Carousel -->
+<header id="carouselHomeTop" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselHomeTop" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselHomeTop" data-slide-to="1"></li>
+        <li data-target="#carouselHomeTop" data-slide-to="2"></li>
+    </ol>
 
-    <style type="text/css">
-
-    ::selection { background-color: #E13300; color: white; }
-    ::-moz-selection { background-color: #E13300; color: white; }
-
-    body {
-        background-color: #fff;
-        margin: 40px;
-        font: 13px/20px normal Helvetica, Arial, sans-serif;
-        color: #4F5155;
-    }
-
-    a {
-        color: #003399;
-        background-color: transparent;
-        font-weight: normal;
-    }
-
-    h1 {
-        color: #444;
-        background-color: transparent;
-        border-bottom: 1px solid #D0D0D0;
-        font-size: 19px;
-        font-weight: normal;
-        margin: 0 0 14px 0;
-        padding: 14px 15px 10px 15px;
-    }
-
-    code {
-        font-family: Consolas, Monaco, Courier New, Courier, monospace;
-        font-size: 12px;
-        background-color: #f9f9f9;
-        border: 1px solid #D0D0D0;
-        color: #002166;
-        display: block;
-        margin: 14px 0 14px 0;
-        padding: 12px 10px 12px 10px;
-    }
-
-    #body {
-        margin: 0 15px 0 15px;
-    }
-
-    p.footer {
-        text-align: right;
-        font-size: 11px;
-        border-top: 1px solid #D0D0D0;
-        line-height: 32px;
-        padding: 0 10px 0 10px;
-        margin: 20px 0 0 0;
-    }
-
-    #container {
-        margin: 10px;
-        border: 1px solid #D0D0D0;
-        box-shadow: 0 0 8px #D0D0D0;
-    }
-    </style>
-</head>
-<body>
-
-<div id="container">
-    <h1>Welcome to CodeIgniter!</h1>
-
-    <div id="body">
-        <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-        <p>If you would like to edit this page you'll find it located at:</p>
-        <code>application/modules/home/views/home.php</code>
-
-        <p>The corresponding controller for this page is found at:</p>
-        <code>application/modules/controllers/Home.php</code>
-
-        <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="www.codeigniter.com/user_guide/">User Guide</a>.</p>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 1</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 2</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 3</h2>
+            </div>
+        </div>
     </div>
 
-    <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carouselHomeTop" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carouselHomeTop" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
 
-</body>
-</html>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Welcome to Modern Business
+            </h1>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.3.5</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Portfolio Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Portfolio Heading</h2>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            </a>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Modern Business Features</h2>
+        </div>
+        <div class="col-md-6">
+            <p>The Modern Business template by Start Bootstrap includes:</p>
+            <ul>
+                <li><strong>Bootstrap v3.3.5</strong>
+                </li>
+                <li>jQuery v1.11.3</li>
+                <li>Font Awesome v4.3.0</li>
+                <li>Working PHP contact form with validation</li>
+                <li>Unstyled page elements for easy customization</li>
+                <li>17 HTML pages</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="well">
+        <div class="row">
+            <div class="col-md-8">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->
