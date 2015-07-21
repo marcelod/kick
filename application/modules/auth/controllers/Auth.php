@@ -39,6 +39,7 @@ class Auth extends MY_Controller {
                 $this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
             }
 
+            $this->data['template'] = 'sb_admin_2';
             $this->_render_page('auth/index', $this->data);
         }
     }
@@ -89,6 +90,7 @@ class Auth extends MY_Controller {
                 'type' => 'password',
             );
 
+            $this->data['template'] = 'default';
             $this->_render_page('auth/login', $this->data);
         }
     }
@@ -151,7 +153,8 @@ class Auth extends MY_Controller {
                 'value' => $user->id,
             );
 
-            //render
+            // set template and render page
+            $this->data['template'] = 'sb_admin_2';
             $this->_render_page('auth/change_password', $this->data);
         }
         else
@@ -205,6 +208,7 @@ class Auth extends MY_Controller {
 
             //set any errors and display the form
             $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            $this->data['template'] = 'default';
             $this->_render_page('auth/forgot_password', $this->data);
         }
         else
@@ -296,6 +300,7 @@ class Auth extends MY_Controller {
                 $this->data['code'] = $code;
 
                 //render
+                $this->data['template'] = 'default';
                 $this->_render_page('auth/reset_password', $this->data);
             }
             else
@@ -387,6 +392,7 @@ class Auth extends MY_Controller {
             $this->data['csrf'] = $this->_get_csrf_nonce();
             $this->data['user'] = $this->ion_auth->user($id)->row();
 
+            $this->data['template'] = 'sb_admin_2';
             $this->_render_page('auth/deactivate_user', $this->data);
         }
         else
@@ -502,6 +508,7 @@ class Auth extends MY_Controller {
                 'value' => $this->form_validation->set_value('password_confirm'),
             );
 
+            $this->data['template'] = 'sb_admin_2';
             $this->_render_page('auth/create_user', $this->data);
         }
     }
@@ -654,6 +661,7 @@ class Auth extends MY_Controller {
             'type' => 'password'
         );
 
+        $this->data['template'] = 'sb_admin_2';
         $this->_render_page('auth/edit_user', $this->data);
     }
 
@@ -700,6 +708,7 @@ class Auth extends MY_Controller {
                 'value' => $this->form_validation->set_value('description'),
             );
 
+            $this->data['template'] = 'sb_admin_2';
             $this->_render_page('auth/create_group', $this->data);
         }
     }
@@ -765,6 +774,7 @@ class Auth extends MY_Controller {
             'value' => $this->form_validation->set_value('group_description', $group->description),
         );
 
+        $this->data['template'] = 'sb_admin_2';
         $this->_render_page('auth/edit_group', $this->data);
     }
 
@@ -795,12 +805,32 @@ class Auth extends MY_Controller {
 
     function _render_page($view, $data=null, $render=false)
     {
+        $data = (empty($data)) ? $this->data : $data;
 
-        $this->viewdata = (empty($data)) ? $this->data: $data;
+        if (isset($data['template'])) {
 
-        $view_html = $this->load->view($view, $this->viewdata, $render);
+            $this->load->library('template');
 
-        if (!$render) return $view_html;
+            $this->template->set_layout($data['template']);
+
+            if ( $data['template'] == 'sb_admin_2') {
+                $this->template->set_base_view('sb_admin_2_view');
+                $this->template->set_header('header_sb_admin_2');
+            }
+
+            if ( ! empty($data['title'])) {
+                $this->template->set_title($data['title']);
+            }
+
+            $this->template->load_view($view, $data);
+        }
+        else {
+            $this->viewdata = (empty($data)) ? $this->data: $data;
+
+            $view_html = $this->load->view($view, $this->viewdata, $render);
+
+            if (!$render) return $view_html;
+        }
     }
 
 }
