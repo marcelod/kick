@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Kick</a>
+        <a class="navbar-brand" href="dash">Kick</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -209,7 +209,7 @@
                 <!-- <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li> -->
                 <li class="divider"></li>
                 <li>
-                    <?php echo anchor("auth/logout/", '<i class="fa fa-sign-out fa-fw"></i> Sair'); ?>
+                    <?php echo anchor('auth/logout', '<i class="fa fa-sign-out fa-fw"></i> Sair'); ?>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -233,18 +233,18 @@
                 </li> -->
                     <!-- /input-group -->
                 <li>
-                    <?php echo anchor("home/logged", '<i class="fa fa-dashboard fa-fw"></i> Dashboard'); ?>
+                    <?php echo anchor("dash", '<i class="fa fa-dashboard fa-fw"></i> Dashboard'); ?>
                 </li>
                 <li>
                     <?php echo anchor("#", '<i class="fa fa-th fa-fw"></i> Cadastros<span class="fa arrow"></span>'); ?>
                     <ul class="nav nav-second-level">
-                        <?php if ($this->ion_auth->is_admin()): ?>
-                            <li>
-                                <?php echo anchor("groups", '<i class="fa fa-users fa-fw"></i> Grupo'); ?>
-                            </li>
-                        <?php endif ?>
+                        <?php // if ($this->ion_auth->is_admin()): ?>
+                            <!-- <li> -->
+                                <?php // echo anchor("groups", '<i class="fa fa-users fa-fw"></i> Grupo'); ?>
+                            <!-- </li> -->
+                        <?php // endif ?>
                         <li>
-                            <?php echo anchor("users", '<i class="fa fa-user fa-fw"></i> Usuário'); ?>
+                            <?php echo anchor("auth", '<i class="fa fa-user fa-fw"></i> Usuário'); ?>
                         </li>
                         <li>
                             <?php echo anchor("services/admin", '<i class="fa fa-calculator fa-fw"></i> Serviços'); ?>

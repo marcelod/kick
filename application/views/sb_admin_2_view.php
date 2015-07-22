@@ -15,7 +15,7 @@
 
         <link rel="stylesheet" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
         <!-- MetisMenu CSS -->
-        <link href="<?php echo assets_url('bower_components/metisMenu/dist/metisMenu.min.css'); ?>" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo base_url('bower_components/metisMenu/dist/metisMenu.min.css'); ?>">
         <!-- Custom styles -->
         <link rel="stylesheet" href="<?php echo assets_url('css/sb-admin-2.css'); ?>">
         <!-- Font-Awesome CSS -->

@@ -207,7 +207,11 @@ class Template {
         $js = array();
         foreach ($this->js as $js_file)
         {
-            $js[] = '<script src="' . assets_url('js/' . $js_file) . '"></script>';
+            if (strpos($js_file, 'bower_components') !== FALSE) {
+                $js[] = '<script src="' . base_url($js_file) . '"></script>';
+            } else {
+                $js[] = '<script src="' . assets_url('js/' . $js_file) . '"></script>';
+            }
         }
         $js = implode('', $js);
 
