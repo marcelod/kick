@@ -36,7 +36,7 @@ Create file [application/database.php](https://github.com/bcit-ci/CodeIgniter/bl
 
 ### 3 Step
 
-Create database and run file.sql
+Create database and run assets/uploads/file.sql
 
 ## Access
 

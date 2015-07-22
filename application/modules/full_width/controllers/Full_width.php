@@ -8,6 +8,7 @@ class Full_width extends MY_Controller {
     {
         $this->load->library('template');
         $this->template->set_nav_active('other');
+        $this->template->add_css('full-width-pics.css');
 
         $this->template->load_view('full_width/index');
     }
