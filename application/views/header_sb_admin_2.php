@@ -246,9 +246,6 @@
                         <li>
                             <?php echo anchor("auth", '<i class="fa fa-user fa-fw"></i> Usuário'); ?>
                         </li>
-                        <li>
-                            <?php echo anchor("services/admin", '<i class="fa fa-calculator fa-fw"></i> Serviços'); ?>
-                        </li>
                     </ul>
                 </li>
 
@@ -314,10 +311,10 @@
                         <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Blank Page</a>
+                                <?php echo anchor('example/blank_page', 'Blank Page'); ?>
                             </li>
                             <li>
-                                <a href="#">Login Page</a>
+                                <?php echo anchor('auth/login', 'Login'); ?>
                             </li>
                         </ul>
                     </li>
