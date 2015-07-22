@@ -1,6 +1,4 @@
-###################
-What is Kick
-###################
+# What is Kick
 
 Kick is a project to start a site with some features using Codeigniter, HMVC, IonAuth, etc.
 
@@ -29,11 +27,12 @@ Kick is a project to start a site with some features using Codeigniter, HMVC, Io
 
 ### 2 Step
 
-Create file <a href="https://github.com/bcit-ci/CodeIgniter/blob/develop/application%2Fconfig%2Fdatabase.php">application/database.php</a> and configure
 
-	$db['default']['username'] = 'user'; // colocar usuário do banco de dados
-	$db['default']['password'] = 'senha'; // senha para acesso ao banco de dados
-	$db['default']['database'] = 'database'; // nome da base de dados a ser usada
+Create file [application/database.php](https://github.com/bcit-ci/CodeIgniter/blob/develop/application%2Fconfig%2Fdatabase.php"File application/database.php") and configure
+
+	$db['default']['username'] = 'user';
+	$db['default']['password'] = 'password';
+	$db['default']['database'] = 'database';
 
 ### 3 Step
 
@@ -44,7 +43,7 @@ Create database and run file.sql
 	* login: admin@admin.com
 	* password: password
 
-##License
+## License
 
 Please see the `license
 agreement <https://github.com/marcelod/kick/blob/master/LICENSE>`_.
