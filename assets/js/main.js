@@ -122,7 +122,7 @@
         $('[data-toggle="popover"]').popover();
 
         $('.carousel').carousel({
-            interval: 5000 //changes the speed
+            interval: 55000 //changes the speed
         });
 
         // Ajaxify links
