@@ -1,4 +1,4 @@
-<h1><?php echo lang('login_heading');?></h1>
+<h1 class="page-header"><?php echo lang('login_heading');?></h1>
 <p><?php echo lang('login_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
@@ -7,12 +7,12 @@
 
   <p>
     <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
+    <?php echo bs_form_input($identity);?>
   </p>
 
   <p>
     <?php echo lang('login_password_label', 'password');?>
-    <?php echo form_input($password);?>
+    <?php echo bs_form_input($password);?>
   </p>
 
   <p>
@@ -21,7 +21,7 @@
   </p>
 
 
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
+  <p><?php echo bs_form_submit('submit', lang('login_submit_btn'));?></p>
 
 <?php echo form_close();?>
 
