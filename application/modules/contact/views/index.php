@@ -16,6 +16,12 @@
       </div>
       <!-- /.row -->
 
+      <div class="row">
+          <div class="col-lg-12">
+            <?php echo $message;?>
+          </div>
+      </div>
+
       <!-- Content Row -->
       <div class="row">
           <!-- Map Column -->
@@ -28,12 +34,12 @@
               <p>
                   3481 Melrose Place<br>Beverly Hills, CA 90210<br>
               </p>
-              <p><i class="fa fa-phone"></i> 
+              <p><i class="fa fa-phone"></i>
                   <abbr title="Phone">P</abbr>: (123) 456-7890</p>
-              <p><i class="fa fa-envelope-o"></i> 
+              <p><i class="fa fa-envelope-o"></i>
                   <abbr title="Email">E</abbr>: <a href="mailto:name@example.com">name@example.com</a>
               </p>
-              <p><i class="fa fa-clock-o"></i> 
+              <p><i class="fa fa-clock-o"></i>
                   <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
               <ul class="list-unstyled list-inline list-social-icons">
                   <li>
@@ -58,37 +64,41 @@
       <div class="row">
           <div class="col-md-8">
               <h3>Send us a Message</h3>
-              <form name="sentMessage" id="contactForm" novalidate>
+
+              <?php echo form_open('contact/send'); ?>
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Full Name:</label>
-                          <input type="text" class="form-control" id="nome" name="nome" required data-validation-required-message="Please enter your name.">
-                          <p class="help-block"></p>
+                          <?php echo form_error('name'); ?>
+                          <input type="text" class="form-control" id="name" name="name" required data-validation-require-dmessage="Please enter your name." value="<?php echo set_value('name') ;?>">
                       </div>
                   </div>
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Phone Number:</label>
-                          <input type="tel" class="form-control" id="telefone" name="telefone" required data-validation-required-message="Please enter your phone number.">
+                          <?php echo form_error('telephone'); ?>
+                          <input type="tel" class="form-control" id="telephone" name="telephone" required data-validation-required-message="Please enter your phone number." value="<?php echo set_value('telephone') ;?>">
                       </div>
                   </div>
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Email Address:</label>
-                          <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                          <?php echo form_error('email'); ?>
+                          <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address." value="<?php echo set_value('email') ;?>">
                       </div>
                   </div>
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Message:</label>
-                          <textarea rows="10" cols="100" class="form-control" id="mensagem" name="mensagem" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                          <?php echo form_error('message'); ?>
+                          <textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"><?php echo set_value('message') ;?></textarea>
                       </div>
                   </div>
                   <div id="success"></div>
                   <!-- For success/fail messages -->
                   <button type="submit" class="btn btn-primary">Send Message</button>
                   <button type="reset" class="btn btn-default">Clear</button>
-              </form>
+              <?php echo form_close(); ?>
           </div>
 
       </div>

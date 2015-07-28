@@ -235,16 +235,15 @@
                 <li>
                     <?php echo anchor("dash", '<i class="fa fa-dashboard fa-fw"></i> Dashboard'); ?>
                 </li>
+
                 <li>
-                    <?php echo anchor("#", '<i class="fa fa-th fa-fw"></i> Cadastros<span class="fa arrow"></span>'); ?>
+                    <?php echo anchor("#", '<i class="fa fa-connectdevelop fa-fw"></i> Módulos<span class="fa arrow"></span>'); ?>
                     <ul class="nav nav-second-level">
-                        <?php // if ($this->ion_auth->is_admin()): ?>
-                            <!-- <li> -->
-                                <?php // echo anchor("groups", '<i class="fa fa-users fa-fw"></i> Grupo'); ?>
-                            <!-- </li> -->
-                        <?php // endif ?>
                         <li>
-                            <?php echo anchor("auth", '<i class="fa fa-user fa-fw"></i> Usuário'); ?>
+                            <?php echo anchor("auth", '<i class="fa fa-users fa-fw"></i> Usuários'); ?>
+                        </li>
+                        <li>
+                            <?php echo anchor("contact", '<i class="fa fa-phone fa-fw"></i> Contato'); ?>
                         </li>
                     </ul>
                 </li>
