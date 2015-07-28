@@ -95,6 +95,10 @@ CREATE TABLE `login_attempts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
+#
+# Table structure for table 'ci_sessions'
+#
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
         `id` varchar(40) NOT NULL,
         `ip_address` varchar(45) NOT NULL,
@@ -103,3 +107,32 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         PRIMARY KEY (id),
         KEY `ci_sessions_timestamp` (`timestamp`)
 );
+
+#
+# Table structure for table 'options'
+#
+CREATE TABLE `options` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `option_name` varchar(100) NOT NULL,
+  `option_value` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+#
+# Estrutura da tabela `contact`
+#
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telephone` varchar(25) DEFAULT NULL,
+  `message` text NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `answered` tinyint(1) NOT NULL DEFAULT '0',
+  `ip_address` varchar(15) NOT NULL DEFAULT '0.0.0.0',
+  `user_agent` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
