@@ -243,7 +243,7 @@
                             <?php echo anchor("auth", '<i class="fa fa-users fa-fw"></i> Usuários'); ?>
                         </li>
                         <li>
-                            <?php echo anchor("contact", '<i class="fa fa-phone fa-fw"></i> Contato'); ?>
+                            <?php echo anchor("contact/admin", '<i class="fa fa-phone fa-fw"></i> Contato'); ?>
                         </li>
                     </ul>
                 </li>

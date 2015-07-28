@@ -7,17 +7,18 @@ class Contact extends MY_Controller {
     {
         parent::__construct();
         $this->load->database();
-        $this->load->library(array('ion_auth','form_validation', 'googlemaps'));
+        $this->load->library(array('ion_auth','form_validation', 'googlemaps', 'template'));
         $this->load->helper(array('language'));
 
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
+
+        $this->load->model('contact/contact_m');
 
         $this->lang->load('auth');
     }
 
     public function index()
     {
-        $this->load->library('template');
         $this->template->set_nav_active('contact');
 
         $data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
@@ -39,7 +40,7 @@ class Contact extends MY_Controller {
     public function send()
     {
         $data = array();
-        if($this->form_validation->run() == FALSE) {
+        if ($this->form_validation->run() == FALSE) {
             $this->index();
         } else {
             $data['name']     	= $this->input->post('name', TRUE);
@@ -65,12 +66,56 @@ class Contact extends MY_Controller {
 
             $this->email->send();
 
-            $this->load->model('contact/contact_m');
             $this->contact_m->save($data);
 
             $this->session->set_flashdata('message', 'Obrigado pelo contato!');
 
             redirect('contact', 'refresh');
+        }
+    }
+
+
+
+
+
+    public function admin()
+    {
+        if ( ! $this->ion_auth->logged_in() ) {
+            redirect('auth/login', 'refresh');
+        }
+        else {
+            // set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+            $this->data['title'] = 'Contato';
+
+            //list the contacts
+            $this->data['contacts'] = $this->contact_m->get();
+
+            $this->_render_page('contact/admin', $this->data);
+        }
+    }
+
+
+
+    private function _render_page($view, $data=null, $render=false)
+    {
+        $data = (empty($data)) ? $this->data : $data;
+
+        if ( ! $render) {
+            $this->template->set_base_view('sb_admin_2_view');
+            $this->template->set_header('header_sb_admin_2');
+            $this->template->set_layout('sb_admin_2');
+
+            if ( ! empty($data['title']))
+            {
+                $this->template->set_title($data['title']);
+            }
+
+            $this->template->load_view($view, $data);
+        }
+        else {
+            return $this->load->view($view, $data, TRUE);
         }
     }
 
