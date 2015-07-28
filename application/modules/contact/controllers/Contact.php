@@ -7,7 +7,7 @@ class Contact extends MY_Controller {
     {
         parent::__construct();
         $this->load->database();
-        $this->load->library(array('ion_auth','form_validation'));
+        $this->load->library(array('ion_auth','form_validation', 'googlemaps'));
         $this->load->helper(array('language'));
 
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
@@ -21,6 +21,16 @@ class Contact extends MY_Controller {
         $this->template->set_nav_active('contact');
 
         $data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+        $confGMaps['center'] = '-23.527584,-46.678473';
+        $confGMaps['zoom'] = '16';
+        $confGMaps['minifyJS'] = true;
+        $this->googlemaps->initialize($confGMaps);
+
+        $marker = array();
+        $marker['position'] = '-23.527584,-46.678473';
+        $this->googlemaps->add_marker($marker);
+        $data['map'] = $this->googlemaps->create_map();
 
         $this->template->load_view('contact/index', $data);
 
@@ -63,6 +73,8 @@ class Contact extends MY_Controller {
             redirect('contact', 'refresh');
         }
     }
+
+
 
 }
 
