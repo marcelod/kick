@@ -75,9 +75,6 @@ class Contact extends MY_Controller {
     }
 
 
-
-
-
     public function admin()
     {
         if ( ! $this->ion_auth->logged_in() ) {

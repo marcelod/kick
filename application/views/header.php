@@ -84,8 +84,8 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a target="_blank" href="https://github.com/marcelod/kick">Github</a></li>
-                <li><a href="<?php echo site_url('auth'); ?>">Login</a></li>
+                <li><a href="<?php echo site_url('auth'); ?>">Access</a></li>
+                <li><a target="_blank" href="https://github.com/marcelod/kick"><i class="fa fa-github-alt"></i></a></li>
             </ul>
         </nav>
     </div>

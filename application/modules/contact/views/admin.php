@@ -10,28 +10,35 @@
 
 		<div id="infoMessage"><?php echo $message;?></div>
 
-		<table class="table table-condensed table-striped table-hover table-bordered">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Email</th>
-					<th>Telefone</th>
-					<th>Mensagem</th>
-					<th>Data</th>
-				</tr>
-			</thead>
-			<tbody>
-			<?php foreach ($contacts as $contact):?>
-				<tr>
-		            <td><?php echo htmlspecialchars($contact->name, ENT_QUOTES,'UTF-8');?></td>
-		            <td><?php echo htmlspecialchars($contact->email, ENT_QUOTES,'UTF-8');?></td>
-		            <td><?php echo htmlspecialchars($contact->telephone, ENT_QUOTES,'UTF-8');?></td>
-		            <td><?php echo htmlspecialchars($contact->message, ENT_QUOTES,'UTF-8');?></td>
-		            <td><?php echo $contact->created_at;?></td>
-				</tr>
-			<?php endforeach;?>
-			</tbody>
-		</table>
+		<?php if (count($contacts) > 0): ?>
+
+			<table class="table table-condensed table-striped table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Email</th>
+						<th>Telefone</th>
+						<th>Mensagem</th>
+						<th>Data</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach ($contacts as $contact):?>
+					<tr>
+			            <td><?php echo htmlspecialchars($contact->name, ENT_QUOTES,'UTF-8');?></td>
+			            <td><?php echo htmlspecialchars($contact->email, ENT_QUOTES,'UTF-8');?></td>
+			            <td><?php echo htmlspecialchars($contact->telephone, ENT_QUOTES,'UTF-8');?></td>
+			            <td><?php echo htmlspecialchars($contact->message, ENT_QUOTES,'UTF-8');?></td>
+			            <td><?php echo $contact->created_at;?></td>
+					</tr>
+				<?php endforeach;?>
+				</tbody>
+			</table>
+
+		<?php else: ?>
+			<?php echo cAlerts('Não há mensagens de contato.', "alert-danger", false) ?>
+		<?php endif ?>
+
     </div>
     <!-- /.col-lg-7 -->
 

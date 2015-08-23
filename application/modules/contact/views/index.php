@@ -4,13 +4,13 @@
       <!-- Page Heading/Breadcrumbs -->
       <div class="row">
           <div class="col-lg-12">
-              <h1 class="page-header">Contact
-                  <small>Subheading</small>
+              <h1 class="page-header">Contato
+                  <small>envie uma mensagem e saiba como onde achar</small>
               </h1>
               <ol class="breadcrumb">
-                  <li><a href="index.html">Home</a>
+                  <li><a href="home">Home</a>
                   </li>
-                  <li class="active">Contact</li>
+                  <li class="active">Contato</li>
               </ol>
           </div>
       </div>
@@ -24,14 +24,44 @@
 
       <!-- Content Row -->
       <div class="row">
-          <!-- Map Column -->
+
           <div class="col-md-8">
-              <!-- Embedded Google Map -->
-              <?php echo $map['html']; ?>
+              <?php echo form_open('contact/send'); ?>
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <label>Nome:</label>
+                          <?php echo form_error('name'); ?>
+                          <input type="text" class="form-control" id="name" name="name" required data-validation-require-dmessage="Please enter your name." value="<?php echo set_value('name') ;?>">
+                      </div>
+                  </div>
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <label>Telefone:</label>
+                          <?php echo form_error('telephone'); ?>
+                          <input type="tel" class="form-control" id="telephone" name="telephone" required data-validation-required-message="Please enter your phone number." value="<?php echo set_value('telephone') ;?>">
+                      </div>
+                  </div>
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <label>Email:</label>
+                          <?php echo form_error('email'); ?>
+                          <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address." value="<?php echo set_value('email') ;?>">
+                      </div>
+                  </div>
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <label>Mensagem:</label>
+                          <?php echo form_error('message'); ?>
+                          <textarea rows="7" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"><?php echo set_value('message') ;?></textarea>
+                      </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                  <button type="reset" class="btn btn-default">Limpar</button>
+              <?php echo form_close(); ?>
           </div>
           <!-- Contact Details Column -->
           <div class="col-md-4">
-              <h3>Contact Details</h3>
+              <h3>Detalhes do nosso contato</h3>
               <p>
                   3481 Melrose Place<br>Beverly Hills, CA 90210<br>
               </p>
@@ -60,48 +90,13 @@
       </div>
       <!-- /.row -->
 
-      <!-- Contact Form -->
-      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+      <hr>
+
       <div class="row">
-          <div class="col-md-8">
-              <h3>Send us a Message</h3>
-
-              <?php echo form_open('contact/send'); ?>
-                  <div class="control-group form-group">
-                      <div class="controls">
-                          <label>Full Name:</label>
-                          <?php echo form_error('name'); ?>
-                          <input type="text" class="form-control" id="name" name="name" required data-validation-require-dmessage="Please enter your name." value="<?php echo set_value('name') ;?>">
-                      </div>
-                  </div>
-                  <div class="control-group form-group">
-                      <div class="controls">
-                          <label>Phone Number:</label>
-                          <?php echo form_error('telephone'); ?>
-                          <input type="tel" class="form-control" id="telephone" name="telephone" required data-validation-required-message="Please enter your phone number." value="<?php echo set_value('telephone') ;?>">
-                      </div>
-                  </div>
-                  <div class="control-group form-group">
-                      <div class="controls">
-                          <label>Email Address:</label>
-                          <?php echo form_error('email'); ?>
-                          <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address." value="<?php echo set_value('email') ;?>">
-                      </div>
-                  </div>
-                  <div class="control-group form-group">
-                      <div class="controls">
-                          <label>Message:</label>
-                          <?php echo form_error('message'); ?>
-                          <textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"><?php echo set_value('message') ;?></textarea>
-                      </div>
-                  </div>
-                  <div id="success"></div>
-                  <!-- For success/fail messages -->
-                  <button type="submit" class="btn btn-primary">Send Message</button>
-                  <button type="reset" class="btn btn-default">Clear</button>
-              <?php echo form_close(); ?>
+          <!-- Map Column -->
+          <div class="col-md-12">
+              <?php echo $map['html']; ?>
           </div>
-
       </div>
       <!-- /.row -->
 
