@@ -91,6 +91,9 @@
                             <li>
                                 <a href="<?php echo base_url('pricing'); ?>">Pricing Table</a>
                             </li>
+                            <li>
+                                <a href="<?php echo base_url('angular'); ?>">Angular Samples</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

@@ -80,6 +80,9 @@
                         <li>
                             <a href="<?php echo site_url('pricing'); ?>">Pricing Table</a>
                         </li>
+                        <li>
+                            <a href="<?php echo site_url('angular'); ?>">Angular Samples</a>
+                        </li>
                     </ul>
                 </li>
             </ul>

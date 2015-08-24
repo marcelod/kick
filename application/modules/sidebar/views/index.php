@@ -39,6 +39,7 @@
                 <a href="<?php echo base_url('faq'); ?>" class="list-group-item">FAQ</a>
                 <a href="<?php echo base_url('404'); ?>" class="list-group-item">404</a>
                 <a href="<?php echo base_url('pricing'); ?>" class="list-group-item">Pricing Table</a>
+                <a href="<?php echo base_url('angular'); ?>" class="list-group-item">Angular Samples</a>
             </div>
         </div>
         <!-- Content Column -->
