@@ -24,7 +24,7 @@ class Example extends MY_Controller {
     public function blank_page()
     {
         $this->data['title'] = 'Sample Pages - Blank Page';
-        $this->data['template'] = 'sb_admin_2';
+        $this->data['template'] = 'admin_lte';
 
         $this->_render_page('example/blank_page', $this->data);
     }
@@ -42,6 +42,11 @@ class Example extends MY_Controller {
             if ( $data['template'] == 'sb_admin_2') {
                 $this->template->set_base_view('sb_admin_2_view');
                 $this->template->set_header('header_sb_admin_2');
+            }
+
+            if ( $data['template'] == 'admin_lte') {
+                $this->template->set_base_view('admin_lte_view');
+                $this->template->set_header('header_admin_lte');
             }
 
             if ( ! empty($data['title'])) {
