@@ -34,8 +34,7 @@
     "tag": "v2.0.1",
     "commit": "ecb4b806831005c25b97ed9089fbb1d7dcc0879c"
   },
-  "_source": "git://github.com/driftyco/ionicons.git",
+  "_source": "https://github.com/driftyco/ionicons.git",
   "_target": "~2.0.1",
-  "_originalSource": "ionicons",
-  "_direct": true
+  "_originalSource": "ionicons"
 }

@@ -61,9 +61,9 @@ class Home extends MY_Controller {
 
             if ( in_array($view, array('home/dash')) )
             {
-                $this->template->set_base_view('admin_view');
-                $this->template->set_header('header_admin');
-                $this->template->set_layout('admin');
+                $this->template->set_base_view('sb_admin_2_view');
+                $this->template->set_header('header_sb_admin_2');
+                $this->template->set_layout('sb_admin_2');
             }
 
             if ( ! empty($data['title']))

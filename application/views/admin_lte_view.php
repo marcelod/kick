@@ -42,7 +42,7 @@
 
         <script src="<?php echo base_url('bower_components/jquery/dist/jquery.min.js'); ?>"></script>
         <script src="<?php echo base_url('bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
-        <script src="<?php echo base_url('bower_components/slimScroll/jquery.slimscroll.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bower_components/jQuery-slimScroll/jquery.slimscroll.min.js'); ?>"></script>
         <script src="<?php echo base_url('bower_components/fastclick/lib/fastclick.min.js'); ?>"></script>
         <script src="<?php echo assets_url('js/AdminLTE/app.min.js'); ?>"></script>
         <script src="<?php echo assets_url('js/AdminLTE/demo.js'); ?>"></script>
