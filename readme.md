@@ -1,6 +1,6 @@
 # What is Kick
 
-Kick is a project to start a site with some features using Codeigniter, HMVC, IonAuth, etc.
+Kick is a project to start a site with some features using Codeigniter, HMVC, IonAuth, Composer, Bower, etc.
 
 
 ## Include
