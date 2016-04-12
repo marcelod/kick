@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title><?php echo $title; ?></title>
+        <base href="<?php echo base_url(); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="<?php echo $description; ?>">
 
@@ -27,6 +28,10 @@
             <script src="<?php echo assets_url('js/html5shiv.min.js'); ?>"></script>
             <script src="<?php echo assets_url('js/respond.min.js'); ?>"></script>
         <![endif]-->
+
+        <script>
+            var BASE_URL = "<?php echo base_url(); ?>";
+        </script>
     </head>
     <body>
         <?php echo $body; ?>
