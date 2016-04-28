@@ -28,7 +28,7 @@ Kick is a project to start a site with some features using Codeigniter, HMVC, Io
 ### 2 Step
 
 
-Create file [application/database.php](https://github.com/bcit-ci/CodeIgniter/blob/develop/application%2Fconfig%2Fdatabase.php"File application/database.php") and configure
+Create file [File application/database.php](https://raw.githubusercontent.com/bcit-ci/CodeIgniter/develop/application/config/database.php) and configure
 
 	$db['default']['username'] = 'user';
 	$db['default']['password'] = 'password';
@@ -45,5 +45,4 @@ Create database and run assets/uploads/file.sql
 
 ## License
 
-Please see the `license
-agreement <https://github.com/marcelod/kick/blob/master/LICENSE>`_.
+Please see the [license agreement](https://github.com/marcelod/kick/blob/master/LICENSE).
