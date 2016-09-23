@@ -133,6 +133,6 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `answered` tinyint(1) NOT NULL DEFAULT '0',
   `ip_address` varchar(15) NOT NULL DEFAULT '0.0.0.0',
   `user_agent` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
