@@ -14,9 +14,9 @@ Support for most major browsers including Chrome, Firefox, IE9+, Opera and Safar
 ## Languages
   * English
   * French
-  * Portuguese (pending)
+  * Portuguese
   * ... and more soon
- 
+
 ## Dependencies
 | NAME | VERSION | WEB | REPO |
 | :--- | :---: | :---: | :---: |

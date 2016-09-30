@@ -17,7 +17,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'].= "://" . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : "");
+$config['base_url'].= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +74,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'portuguese';
 
 /*
 |--------------------------------------------------------------------------
@@ -503,3 +506,18 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+
+
+function load_my_controllers($class) {
+
+    $path = APPPATH . 'core/' . $class . '.php';
+
+    if (strpos($class, 'CI_') !== 0 && is_readable($path)) {
+        require_once($path);
+    }
+
+}
+
+spl_autoload_register('load_my_controllers');
