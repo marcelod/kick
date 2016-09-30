@@ -1,22 +1,16 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<section class="content-header">
+    <?php echo $pagetitle; ?>
+    <?php echo $breadcrumb; ?>
+</section>
 
-?>
-
-            <div class="content-wrapper">
-                <section class="content-header">
-                    <?php echo $pagetitle; ?>
-                    <?php echo $breadcrumb; ?>
-                </section>
-
-                <section class="content">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box box-solid">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title"><i class="fa fa-globe"></i> domProjects, Inc.</h3>
-                                </div>
-                                <div class="box-body">
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-globe"></i> domProjects, Inc.</h3>
+                </div>
+                <div class="box-body">
 
                     <div class="row invoice-info">
                         <div class="col-sm-4 invoice-col">
@@ -148,6 +142,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-
-                </section>
-            </div>
+</section>

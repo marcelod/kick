@@ -31,6 +31,9 @@ class Admin_Controller extends MY_Controller
             $this->data['admin_prefs'] = $this->prefs_model->admin_prefs();
             $this->data['user_login']  = $this->prefs_model->user_info_login($this->ion_auth->user()->row()->id);
 
+            /* Set Template */
+            $this->data['template']    = 'admin_lte';
+
             if ($this->router->fetch_class() == 'dashboard')
             {
                 $this->data['dashboard_alert_file_install'] = $this->core_model->get_file_install();
@@ -43,4 +46,33 @@ class Admin_Controller extends MY_Controller
             }
         }
     }
+
+
+    protected function _render_page($view, $data=null, $render=false)
+    {
+        $data = (empty($data)) ? $this->data : $data;
+
+        if (isset($data['template'])) {
+
+            $this->template->set_layout($this->data['template']);
+
+            $this->template->set_base_view('admin_lte_view');
+            $this->template->set_header('admin_lte_header');
+            $this->template->set_footer('admin_lte_footer');
+
+            if ( ! empty($data['title'])) {
+                $this->template->set_title($data['title']);
+            }
+
+            $this->template->load_view($view, $data);
+        }
+        else {
+            $this->viewdata = (empty($data)) ? $this->data: $data;
+
+            $view_html = $this->load->view($view, $this->viewdata, $render);
+
+            if (!$render) return $view_html;
+        }
+    }
+
 }

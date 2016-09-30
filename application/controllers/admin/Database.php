@@ -14,6 +14,8 @@ class Database extends Admin_Controller {
         $this->page_title->push(lang('menu_database_utility'));
         $this->data['pagetitle'] = $this->page_title->show();
 
+        $this->data['title'] = lang('menu_database_utility');
+
         /* Breadcrumbs :: Common */
         $this->breadcrumbs->unshift(1, lang('menu_database_utility'), 'admin/database');
     }
@@ -21,22 +23,16 @@ class Database extends Admin_Controller {
 
 	public function index()
 	{
-        if ( ! $this->ion_auth->logged_in() OR ! $this->ion_auth->is_admin())
-        {
-            redirect('auth/login', 'refresh');
-        }
-        else
-        {
-            /* Breadcrumbs */
-            $this->data['breadcrumb'] = $this->breadcrumbs->show();
 
-            /* Data */
-            $this->data['list_tables'] = $this->db->list_tables();
-            $this->data['platform']    = $this->db->platform();
-            $this->data['version']     = $this->db->version();
+        /* Breadcrumbs */
+        $this->data['breadcrumb'] = $this->breadcrumbs->show();
 
-            /* Load Template */
-            $this->template->admin_render('admin/database/index', $this->data);
-        }
-	}
+        /* Data */
+        $this->data['list_tables'] = $this->db->list_tables();
+        $this->data['platform']    = $this->db->platform();
+        $this->data['version']     = $this->db->version();
+
+        /* Render page*/
+        $this->_render_page('admin/database/index', $this->data);
+    }
 }

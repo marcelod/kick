@@ -9,7 +9,7 @@ if ( ! function_exists('is_url_exist'))
         {
             if (function_exists('curl_version'))
             {
-                $ch = curl_init($url);    
+                $ch = curl_init($url);
 
                 curl_setopt($ch, CURLOPT_NOBODY, TRUE);
                 curl_exec($ch);
@@ -43,3 +43,22 @@ if ( ! function_exists('is_url_exist'))
     }
 }
 
+
+/**
+ * Assets URL
+ *
+ * @access  public
+ * @param   string
+ * @return  string
+ */
+if ( ! function_exists('assets_url'))
+{
+    function assets_url($uri = '')
+    {
+        $CI =& get_instance();
+
+        $assets_url = $CI->config->item('assets_url');
+
+        return $assets_url . trim($uri, '/');
+    }
+}

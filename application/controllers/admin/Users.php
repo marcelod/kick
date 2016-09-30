@@ -14,6 +14,8 @@ class Users extends Admin_Controller {
         $this->page_title->push(lang('menu_users'));
         $this->data['pagetitle'] = $this->page_title->show();
 
+        $this->data['title'] = lang('menu_users');
+
         /* Breadcrumbs :: Common */
         $this->breadcrumbs->unshift(1, lang('menu_users'), 'admin/users');
     }
@@ -21,25 +23,18 @@ class Users extends Admin_Controller {
 
 	public function index()
 	{
-        if ( ! $this->ion_auth->logged_in() OR ! $this->ion_auth->is_admin())
-        {
-            redirect('auth/login', 'refresh');
-        }
-        else
-        {
-            /* Breadcrumbs */
-            $this->data['breadcrumb'] = $this->breadcrumbs->show();
+        /* Breadcrumbs */
+        $this->data['breadcrumb'] = $this->breadcrumbs->show();
 
-            /* Get all users */
-            $this->data['users'] = $this->ion_auth->users()->result();
-            foreach ($this->data['users'] as $k => $user)
-            {
-                $this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
-            }
-
-            /* Load Template */
-            $this->template->admin_render('admin/users/index', $this->data);
+        /* Get all users */
+        $this->data['users'] = $this->ion_auth->users()->result();
+        foreach ($this->data['users'] as $k => $user)
+        {
+            $this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
         }
+
+        /* Render page*/
+        $this->_render_page('admin/users/index', $this->data);
 	}
 
 
@@ -135,16 +130,16 @@ class Users extends Admin_Controller {
 				'value' => $this->form_validation->set_value('password_confirm'),
 			);
 
-            /* Load Template */
-            $this->template->admin_render('admin/users/create', $this->data);
+			/* Render page*/
+        	$this->_render_page('admin/users/create', $this->data);
         }
 	}
 
 
 	public function delete()
 	{
-        /* Load Template */
-		$this->template->admin_render('admin/users/delete', $this->data);
+		/* Render page*/
+        $this->_render_page('admin/users/delete', $this->data);
 	}
 
 
@@ -297,8 +292,8 @@ class Users extends Admin_Controller {
 		);
 
 
-        /* Load Template */
-		$this->template->admin_render('admin/users/edit', $this->data);
+        /* Render page*/
+        $this->_render_page('admin/users/edit', $this->data);
 	}
 
 
@@ -354,8 +349,8 @@ class Users extends Admin_Controller {
             $this->data['firstname']  = ! empty($user->first_name) ? htmlspecialchars($user->first_name, ENT_QUOTES, 'UTF-8') : NULL;
             $this->data['lastname']   = ! empty($user->last_name) ? ' '.htmlspecialchars($user->last_name, ENT_QUOTES, 'UTF-8') : NULL;
 
-            /* Load Template */
-            $this->template->admin_render('admin/users/deactivate', $this->data);
+            /* Render page*/
+        	$this->_render_page('admin/users/deactivate', $this->data);
 		}
 		else
 		{
@@ -392,8 +387,8 @@ class Users extends Admin_Controller {
             $this->data['user_info'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
         }
 
-        /* Load Template */
-		$this->template->admin_render('admin/users/profile', $this->data);
+        /* Render page*/
+        $this->_render_page('admin/users/profile', $this->data);
 	}
 
 

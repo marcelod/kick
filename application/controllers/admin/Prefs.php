@@ -18,23 +18,20 @@ class Prefs extends Admin_Controller {
 
 	public function index()
 	{
-        if ( ! $this->ion_auth->logged_in() OR ! $this->ion_auth->is_admin())
-        {
-            redirect('auth/login', 'refresh');
-        }
-        else
-        {
-            /* Title Page */
-            $this->page_title->push(lang('menu_preferences'));
-            $this->data['pagetitle'] = $this->page_title->show();
+        $this->interfaces('admin');
 
-            /* Breadcrumbs */
-            $this->data['breadcrumb'] = $this->breadcrumbs->show();
+        // /* Title Page */
+        // $this->page_title->push(lang('menu_preferences'));
+        // $this->data['pagetitle'] = $this->page_title->show();
 
-            /* Load Template */
-            $this->template->admin_render('admin/prefs/index', $this->data);
-        }
-	}
+        // $this->data['title'] = lang('menu_preferences');
+
+        // /* Breadcrumbs */
+        // $this->data['breadcrumb'] = $this->breadcrumbs->show();
+
+        // /* Render page*/
+        // $this->_render_page('admin/prefs/index', $this->data);
+    }
 
 
 	public function interfaces($type = NULL)
@@ -42,6 +39,8 @@ class Prefs extends Admin_Controller {
         /* Title Page */
         $this->page_title->push(lang('menu_preferences'), lang('menu_interfaces'));
         $this->data['pagetitle'] = $this->page_title->show();
+
+        $this->data['title'] = lang('menu_preferences');
 
         /* Breadcrumbs :: Common */
         $this->breadcrumbs->unshift(2, lang('menu_interfaces'), 'admin/prefs/interfaces/admin');
@@ -85,8 +84,8 @@ class Prefs extends Admin_Controller {
             }
             else
             {
-                /* Load Template */
-                $this->template->admin_render('admin/prefs/interfaces/admin', $this->data);
+                /* Render page*/
+                $this->_render_page('admin/prefs/interfaces/admin', $this->data);
             }
         }
         elseif ($type == 'public')
@@ -114,8 +113,8 @@ class Prefs extends Admin_Controller {
             }
             else
             {
-                /* Load Template */
-                $this->template->admin_render('admin/prefs/interfaces/public', $this->data);
+                /* Render page*/
+                $this->_render_page('admin/prefs/interfaces/public', $this->data);
             }
         }
         else

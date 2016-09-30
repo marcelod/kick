@@ -18,17 +18,10 @@ class Resources extends Admin_Controller {
 
 	public function index()
 	{
-		if ( ! $this->ion_auth->logged_in() OR ! $this->ion_auth->is_admin())
-		{
-			redirect('auth', 'refresh');
-		}
-        else
-        {
-            /* Breadcrumbs */
-            $this->data['breadcrumb'] = $this->breadcrumbs->show();
+        /* Breadcrumbs */
+        $this->data['breadcrumb'] = $this->breadcrumbs->show();
 
-            /* Load Template */
-            $this->template->admin_render('admin/resources/index', $this->data);
-        }
+        /* Render page*/
+        $this->_render_page('admin/resources/index', $this->data);
 	}
 }

@@ -9,7 +9,7 @@ class Breadcrumbs {
     private $breadcrumbs = array();
 
     public function __construct()
-    {	
+    {
 		$this->CI =& get_instance();
 
         $this->breadcrumb_open         = $this->CI->config->item('breadcrumb_open');

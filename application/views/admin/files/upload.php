@@ -1,17 +1,11 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<section class="content-header">
+    <?php echo $pagetitle; ?>
+    <?php echo $breadcrumb; ?>
+</section>
 
-?>
-
-            <div class="content-wrapper">
-                <section class="content-header">
-                    <?php echo $pagetitle; ?>
-                    <?php echo $breadcrumb; ?>
-                </section>
-
-                <section class="content">
-                    <div class="row">
-                        <div class="col-md-12">
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
 
 
 <ul>
@@ -25,7 +19,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-                        </div>
-                    </div>
-                </section>
-            </div>
+        </div>
+    </div>
+</section>

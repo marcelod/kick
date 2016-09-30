@@ -13,6 +13,8 @@ class Groups extends Admin_Controller {
         $this->page_title->push(lang('menu_security_groups'));
         $this->data['pagetitle'] = $this->page_title->show();
 
+        $this->data['title'] = lang('menu_security_groups');
+
         /* Breadcrumbs :: Common */
         $this->breadcrumbs->unshift(1, lang('menu_security_groups'), 'admin/groups');
     }
@@ -20,31 +22,19 @@ class Groups extends Admin_Controller {
 
 	public function index()
 	{
-        if ( ! $this->ion_auth->logged_in() OR ! $this->ion_auth->is_admin())
-        {
-            redirect('auth/login', 'refresh');
-        }
-        else
-        {
-            /* Breadcrumbs */
-            $this->data['breadcrumb'] = $this->breadcrumbs->show();
+        /* Breadcrumbs */
+        $this->data['breadcrumb'] = $this->breadcrumbs->show();
 
-            $this->data['groups'] = $this->ion_auth->groups()->result();
+        $this->data['groups'] = $this->ion_auth->groups()->result();
 
-            /* Load Template */
-            $this->template->admin_render('admin/groups/index', $this->data);
-        }
+        /* Render page*/
+    	$this->_render_page('admin/groups/index', $this->data);
     }
 
 
 	public function create()
 	{
-		if ( ! $this->ion_auth->logged_in() OR ! $this->ion_auth->is_admin())
-		{
-			redirect('auth', 'refresh');
-		}
-
-        /* Breadcrumbs */
+		/* Breadcrumbs */
         $this->breadcrumbs->unshift(2, lang('menu_groups_create'), 'admin/groups/create');
         $this->data['breadcrumb'] = $this->breadcrumbs->show();
 
@@ -79,8 +69,8 @@ class Groups extends Admin_Controller {
 				'value' => $this->form_validation->set_value('description')
 			);
 
-            /* Load Template */
-            $this->template->admin_render('admin/groups/create', $this->data);
+            /* Render page*/
+			$this->_render_page('admin/groups/create', $this->data);
 		}
 	}
 
@@ -170,7 +160,7 @@ class Groups extends Admin_Controller {
             'class'    => 'form-control'
 		);
 
-        /* Load Template */
-        $this->template->admin_render('admin/groups/edit', $this->data);
+        /* Render page*/
+		$this->_render_page('admin/groups/edit', $this->data);
 	}
 }
