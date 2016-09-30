@@ -23,40 +23,30 @@ class MY_Controller extends CI_Controller
         $this->data['plugins_dir']    = $this->config->item('plugins_dir');
         $this->data['avatar_dir']     = $this->config->item('avatar_dir');
 
+        $this->data['mobile']    = FALSE;
+        $this->data['ios']       = FALSE;
+        $this->data['android']   = FALSE;
+        $this->data['mobile_ie'] = FALSE;
+
         /* Any mobile device (phones or tablets) */
         if ($this->mobile_detect->isMobile())
         {
             $this->data['mobile'] = TRUE;
 
-            if ($this->mobile_detect->isiOS()){
-                $this->data['ios']     = TRUE;
-                $this->data['android'] = FALSE;
-            }
-            else if ($this->mobile_detect->isAndroidOS())
+            if ($this->mobile_detect->isiOS())
             {
-                $this->data['ios']     = FALSE;
-                $this->data['android'] = TRUE;
-            }
-            else
-            {
-                $this->data['ios']     = FALSE;
-                $this->data['android'] = FALSE;
+                $this->data['ios'] = TRUE;
             }
 
-            if ($this->mobile_detect->getBrowsers('IE')){
+            if ($this->mobile_detect->isAndroidOS())
+            {
+                $this->data['android'] = TRUE;
+            }
+
+            if ($this->mobile_detect->getBrowsers('IE'))
+            {
                 $this->data['mobile_ie'] = TRUE;
             }
-            else
-            {
-                $this->data['mobile_ie'] = FALSE;
-            }
-        }
-        else
-        {
-            $this->data['mobile']    = FALSE;
-            $this->data['ios']       = FALSE;
-            $this->data['android']   = FALSE;
-            $this->data['mobile_ie'] = FALSE;
         }
 	}
 }
