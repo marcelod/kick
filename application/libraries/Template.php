@@ -15,9 +15,9 @@ class Template {
     protected $ga_id           = FALSE; // UA-XXXXX-X
 
     protected $layout    = 'default';
-    protected $base_view = 'base_view';
-    protected $header    = 'header';
-    protected $footer    = 'footer';
+    protected $base_view = 'default_view';
+    protected $header    = 'default_header';
+    protected $footer    = 'default_footer';
 
     protected $nav_active = '';
 

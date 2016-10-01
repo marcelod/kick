@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends MY_Controller {
+class Auth extends Public_Controller {
 
-	function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 
@@ -13,7 +13,7 @@ class Auth extends MY_Controller {
 	}
 
 
-	function index()
+	public function index()
 	{
         if ( ! $this->ion_auth->logged_in())
         {
@@ -26,7 +26,7 @@ class Auth extends MY_Controller {
 	}
 
 
-    function login()
+    public function login()
 	{
         if ( ! $this->ion_auth->logged_in())
         {
@@ -62,7 +62,9 @@ class Auth extends MY_Controller {
                         $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
                         /* Load Template */
-                        $this->template->auth_render('auth/choice', $this->data);
+                        // $this->template->auth_render('auth/choice', $this->data);
+                        /* Render page*/
+                        $this->_render_page('auth/login', $this->data);
                     }
                 }
                 else
@@ -91,8 +93,10 @@ class Auth extends MY_Controller {
                     'placeholder' => lang('auth_your_password')
                 );
 
-                /* Load Template */
-                $this->template->auth_render('auth/login', $this->data);
+                // /* Load Template */
+                // $this->template->auth_render('auth/login', $this->data);
+                /* Render page*/
+                $this->_render_page('auth/login', $this->data);
             }
         }
         else
@@ -102,7 +106,7 @@ class Auth extends MY_Controller {
    }
 
 
-    function logout($src = NULL)
+    public function logout($src = NULL)
 	{
         $logout = $this->ion_auth->logout();
 
