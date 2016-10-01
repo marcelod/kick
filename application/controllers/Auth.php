@@ -28,6 +28,7 @@ class Auth extends Public_Controller {
 
     public function login()
 	{
+        // var_dump($this->ion_auth->logged_in());die();
         if ( ! $this->ion_auth->logged_in())
         {
             /* Load */
@@ -49,6 +50,7 @@ class Auth extends Public_Controller {
             {
                 $remember = (bool) $this->input->post('remember');
 
+
                 if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
                 {
                     if ( ! $this->ion_auth->is_admin())
@@ -61,10 +63,8 @@ class Auth extends Public_Controller {
                         /* Data */
                         $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
-                        /* Load Template */
-                        // $this->template->auth_render('auth/choice', $this->data);
                         /* Render page*/
-                        $this->_render_page('auth/login', $this->data);
+                        $this->_render_page('auth/choice', $this->data);
                     }
                 }
                 else
@@ -93,8 +93,6 @@ class Auth extends Public_Controller {
                     'placeholder' => lang('auth_your_password')
                 );
 
-                // /* Load Template */
-                // $this->template->auth_render('auth/login', $this->data);
                 /* Render page*/
                 $this->_render_page('auth/login', $this->data);
             }
@@ -111,13 +109,14 @@ class Auth extends Public_Controller {
         $logout = $this->ion_auth->logout();
 
         $this->session->set_flashdata('message', $this->ion_auth->messages());
-
         if ($src == 'admin')
         {
+            // var_dump($src);die();
             redirect('auth/login', 'refresh');
         }
         else
         {
+            // var_dump($src);die('sdf');
             redirect('/', 'refresh');
         }
 	}

@@ -225,7 +225,7 @@ class Template {
         $css = implode('', $css);
 
         $header = $this->_ci->load->view('layout/' . $this->header, $data, TRUE);
-        $footer = $this->_ci->load->view('layout/' . $this->footer, array(), TRUE);
+        $footer = $this->_ci->load->view('layout/' . $this->footer, $data, TRUE);
         $main_content = $this->_ci->load->view($view, $data, TRUE);
 
         $body = $this->_ci->load->view('layout/' . $this->layout, array(
