@@ -48,9 +48,11 @@ class Admin_Controller extends MY_Controller
     }
 
 
-    protected function _render_page($view, $data=null, $render=false)
+    protected function _render_page($view = '', $data=null, $render=false)
     {
         $data = (empty($data)) ? $this->data : $data;
+
+        $view = $view !== '' ? $view : $this->router->fetch_class();
 
         if (isset($data['template'])) {
 
