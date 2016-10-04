@@ -235,7 +235,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                         <li class="header text-uppercase">AdminLTE</li>
-                        <li class="treeview <?=active_link_controller('alt_dash')?>">
+                        <li class="treeview <?=active_link_controller('dash')?>">
                           <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             <span class="pull-right-container">
@@ -244,26 +244,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </a>
                           <ul class="treeview-menu">
                             <li class="<?=active_link_function('v1')?>">
-                                <a href="<?php echo site_url('admin/alt_dash/v1') ?>">
+                                <a href="<?php echo site_url('admin_lte/dash/v1') ?>">
                                     <i class="fa fa-circle-o"></i> Dashboard v1
                                 </a>
                             </li>
                             <li class="<?=active_link_function('v2')?>">
-                                <a href="<?php echo site_url('admin/alt_dash/v2') ?>">
+                                <a href="<?php echo site_url('admin_lte/dash/v2') ?>">
                                     <i class="fa fa-circle-o"></i> Dashboard v2
                                 </a>
                             </li>
                           </ul>
                         </li>
-                        <li class="<?=active_link_controller('alt_widgets')?>">
-                          <a href="<?php echo site_url('admin/alt_widgets') ?>">
+                        <li class="<?=active_link_controller('widgets')?>">
+                          <a href="<?php echo site_url('admin_lte/widgets') ?>">
                             <i class="fa fa-th"></i> <span>Widgets</span>
                             <span class="pull-right-container">
                               <small class="label pull-right bg-green">new</small>
                             </span>
                           </a>
                         </li>
-                        <li class="treeview <?=active_link_controller('alt_charts')?>">
+                        <li class="treeview <?=active_link_controller('charts')?>">
                           <a href="#">
                             <i class="fa fa-pie-chart"></i>
                             <span>Charts</span>
@@ -273,28 +273,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </a>
                           <ul class="treeview-menu" style="display: none;">
                             <li class="<?=active_link_function('chartjs')?>">
-                                <a href="<?php echo site_url('admin/alt_charts/chartjs') ?>">
+                                <a href="<?php echo site_url('admin_lte/charts/chartjs') ?>">
                                     <i class="fa fa-circle-o"></i> ChartJS
                                 </a>
                             </li>
                             <li class="<?=active_link_function('morris')?>">
-                                <a href="<?php echo site_url('admin/alt_charts/morris') ?>">
+                                <a href="<?php echo site_url('admin_lte/charts/morris') ?>">
                                     <i class="fa fa-circle-o"></i> Morris
                                 </a>
                             </li>
                             <li class="<?=active_link_function('flot')?>">
-                                <a href="<?php echo site_url('admin/alt_charts/flot') ?>">
+                                <a href="<?php echo site_url('admin_lte/charts/flot') ?>">
                                     <i class="fa fa-circle-o"></i> Flot
                                 </a>
                             </li>
                             <li class="<?=active_link_function('inline')?>">
-                                <a href="<?php echo site_url('admin/alt_charts/inline') ?>">
+                                <a href="<?php echo site_url('admin_lte/charts/inline') ?>">
                                     <i class="fa fa-circle-o"></i> Inline charts
                                 </a>
                             </li>
                           </ul>
                         </li>
-                        <li class="treeview <?=active_link_controller('alt_ui')?>">
+                        <li class="treeview <?=active_link_controller('ui')?>">
                           <a href="#">
                             <i class="fa fa-laptop"></i>
                             <span>UI Elements</span>
@@ -304,38 +304,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </a>
                           <ul class="treeview-menu" style="display: none;">
                             <li class="<?=active_link_function('general')?>">
-                                <a href="<?php echo site_url('admin/alt_ui/general') ?>">
+                                <a href="<?php echo site_url('admin_lte/ui/general') ?>">
                                     <i class="fa fa-circle-o"></i> General
                                 </a>
                             </li>
                             <li class="<?=active_link_function('icons')?>">
-                                <a href="<?php echo site_url('admin/alt_ui/icons') ?>">
+                                <a href="<?php echo site_url('admin_lte/ui/icons') ?>">
                                     <i class="fa fa-circle-o"></i> Icons
                                 </a>
                             </li>
                             <li class="<?=active_link_function('buttons')?>">
-                                <a href="<?php echo site_url('admin/alt_ui/buttons') ?>">
+                                <a href="<?php echo site_url('admin_lte/ui/buttons') ?>">
                                     <i class="fa fa-circle-o"></i> Buttons
                                 </a>
                             </li>
                             <li class="<?=active_link_function('sliders')?>">
-                                <a href="<?php echo site_url('admin/alt_ui/sliders') ?>">
+                                <a href="<?php echo site_url('admin_lte/ui/sliders') ?>">
                                     <i class="fa fa-circle-o"></i> Sliders
                                 </a>
                             </li>
                             <li class="<?=active_link_function('timeline')?>">
-                                <a href="<?php echo site_url('admin/alt_ui/timeline') ?>">
+                                <a href="<?php echo site_url('admin_lte/ui/timeline') ?>">
                                     <i class="fa fa-circle-o"></i> Timeline
                                 </a>
                             </li>
                             <li class="<?=active_link_function('modals')?>">
-                                <a href="<?php echo site_url('admin/alt_ui/modals') ?>">
+                                <a href="<?php echo site_url('admin_lte/ui/modals') ?>">
                                     <i class="fa fa-circle-o"></i> Modals
                                 </a>
                             </li>
                           </ul>
                         </li>
-                        <li class="treeview <?=active_link_controller('alt_forms')?>">
+                        <li class="treeview <?=active_link_controller('forms')?>">
                           <a href="#">
                             <i class="fa fa-edit"></i> <span>Forms</span>
                             <span class="pull-right-container">
@@ -344,23 +344,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </a>
                           <ul class="treeview-menu">
                             <li class="<?=active_link_function('general')?>">
-                                <a href="<?php echo site_url('admin/alt_forms/general') ?>">
+                                <a href="<?php echo site_url('admin_lte/forms/general') ?>">
                                     <i class="fa fa-circle-o"></i> General Elements
                                 </a>
                             </li>
                             <li class="<?=active_link_function('advanced')?>">
-                                <a href="<?php echo site_url('admin/alt_forms/advanced') ?>">
+                                <a href="<?php echo site_url('admin_lte/forms/advanced') ?>">
                                     <i class="fa fa-circle-o"></i> Advanced Elements
                                 </a>
                             </li>
                             <li class="<?=active_link_function('editors')?>">
-                                <a href="<?php echo site_url('admin/alt_forms/editors') ?>">
+                                <a href="<?php echo site_url('admin_lte/forms/editors') ?>">
                                     <i class="fa fa-circle-o"></i> Editors
                                 </a>
                             </li>
                           </ul>
                         </li>
-                        <li class="treeview <?=active_link_controller('alt_tables')?>">
+                        <li class="treeview <?=active_link_controller('tables')?>">
                           <a href="#">
                             <i class="fa fa-table"></i> <span>Tables</span>
                             <span class="pull-right-container">
@@ -369,19 +369,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </a>
                           <ul class="treeview-menu">
                             <li class="<?=active_link_function('simple')?>">
-                                <a href="<?php echo site_url('admin/alt_tables/simple') ?>">
+                                <a href="<?php echo site_url('admin_lte/tables/simple') ?>">
                                     <i class="fa fa-circle-o"></i> Simple tables
                                 </a>
                             </li>
                             <li class="<?=active_link_function('data')?>">
-                                <a href="<?php echo site_url('admin/alt_tables/data') ?>">
+                                <a href="<?php echo site_url('admin_lte/tables/data') ?>">
                                     <i class="fa fa-circle-o"></i> Data tables
                                 </a>
                             </li>
                           </ul>
                         </li>
-                        <li class="<?=active_link_controller('alt_calendar')?>">
-                          <a href="<?php echo site_url('admin/alt_calendar') ?>">
+                        <li class="<?=active_link_controller('calendar')?>">
+                          <a href="<?php echo site_url('admin_lte/calendar') ?>">
                             <i class="fa fa-calendar"></i> <span>Calendar</span>
                             <span class="pull-right-container">
                               <small class="label pull-right bg-red">3</small>
@@ -389,8 +389,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </span>
                           </a>
                         </li>
-                        <li class="<?=active_link_controller('alt_mailbox')?>">
-                          <a href="<?php echo site_url('admin/alt_mailbox') ?>">
+                        <li class="<?=active_link_controller('mailbox')?>">
+                          <a href="<?php echo site_url('admin_lte/mailbox') ?>">
                             <i class="fa fa-envelope"></i> <span>Mailbox</span>
                             <span class="pull-right-container">
                               <small class="label pull-right bg-yellow">12</small>
@@ -399,7 +399,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </span>
                           </a>
                         </li>
-                        <li class="treeview <?=active_link_controller('alt_examples')?>">
+                        <li class="treeview <?=active_link_controller('examples')?>">
                           <a href="#">
                             <i class="fa fa-folder"></i> <span>Examples</span>
                             <span class="pull-right-container">
@@ -408,22 +408,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </a>
                           <ul class="treeview-menu" style="display: none;">
                             <li class="<?=active_link_function('invoice')?>">
-                                <a href="<?php echo site_url('admin/alt_examples/invoice') ?>">
+                                <a href="<?php echo site_url('admin_lte/examples/invoice') ?>">
                                     <i class="fa fa-circle-o"></i> Invoice
                                 </a>
                             </li>
                             <li class="<?=active_link_function('profile')?>">
-                                <a href="<?php echo site_url('admin/alt_examples/profile') ?>">
+                                <a href="<?php echo site_url('admin_lte/examples/profile') ?>">
                                     <i class="fa fa-circle-o"></i> Profile
                                 </a>
                             </li>
                             <li class="<?=active_link_function('blank')?>">
-                                <a href="<?php echo site_url('admin/alt_examples/blank') ?>">
+                                <a href="<?php echo site_url('admin_lte/examples/blank') ?>">
                                     <i class="fa fa-circle-o"></i> Blank Page
                                 </a>
                             </li>
                             <li class="<?=active_link_function('pace')?>">
-                                <a href="<?php echo site_url('admin/alt_examples/pace') ?>">
+                                <a href="<?php echo site_url('admin_lte/examples/pace') ?>">
                                     <i class="fa fa-circle-o"></i> Pace Page
                                 </a>
                             </li>
