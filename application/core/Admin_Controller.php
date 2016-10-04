@@ -14,7 +14,7 @@ class Admin_Controller extends MY_Controller
         else
         {
             /* Load */
-            $this->load->config('admin/dp_config');
+            $this->load->config('dp_admin_config');
             $this->load->library('admin/page_title');
             $this->load->library('admin/breadcrumbs');
             $this->load->model('admin/core_model');

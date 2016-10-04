@@ -11,6 +11,8 @@ class Resources extends Admin_Controller {
         $this->page_title->push(lang('menu_resources'));
         $this->data['pagetitle'] = $this->page_title->show();
 
+        $this->data['title'] = lang('menu_resources');
+
         /* Breadcrumbs :: Common */
         $this->breadcrumbs->unshift(1, lang('menu_resources'), 'admin/resources');
     }
