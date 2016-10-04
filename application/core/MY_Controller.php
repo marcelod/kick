@@ -1,17 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MY_Controller extends CI_Controller
-{
-	public function __construct()
+// Load the MX_Controller class
+require APPPATH . 'third_party/MX/Controller.php';
+
+class MY_Controller extends MX_Controller {
+
+    public function __construct()
 	{
 		parent::__construct();
 
         /* COMMON :: ADMIN & PUBLIC */
         /* Load */
         $this->load->database();
-        $this->load->config('common/dp_config');
-        $this->load->config('common/dp_language');
+        $this->load->config('dp_config');
+        $this->load->config('dp_language');
         $this->load->library(array('form_validation', 'ion_auth', 'template', 'common/mobile_detect'));
         $this->load->helper(array('array', 'language', 'url'));
         $this->load->model('common/prefs_model');
