@@ -87,7 +87,16 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?php echo site_url('auth'); ?>">Access</a></li>
+                <?php if ($admin_link): ?>
+                    <li><a href="<?php echo site_url('admin'); ?>">Admin</a></li>
+                <?php endif; ?>
+
+                <?php if ($logout_link): ?>
+                    <li><a href="<?php echo site_url('auth/logout/public'); ?>">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="<?php echo site_url('auth/login'); ?>">Login</a></li>
+                <?php endif; ?>
+
                 <li><a target="_blank" href="https://github.com/marcelod/kick"><i class="fa fa-github-alt"></i></a></li>
             </ul>
         </nav>

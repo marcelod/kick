@@ -64,13 +64,13 @@ class Auth extends Public_Controller {
                         $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
                         /* Render page*/
-                        $this->_render_page('auth/choice', $this->data);
+                        $this->_render_page('choice', $this->data);
                     }
                 }
                 else
                 {
                     $this->session->set_flashdata('message', $this->ion_auth->errors());
-				    redirect('auth/login', 'refresh');
+				    redirect('login', 'refresh');
                 }
             }
             else
@@ -94,7 +94,7 @@ class Auth extends Public_Controller {
                 );
 
                 /* Render page*/
-                $this->_render_page('auth/login', $this->data);
+                $this->_render_page('login', $this->data);
             }
         }
         else
@@ -112,7 +112,7 @@ class Auth extends Public_Controller {
         if ($src == 'admin')
         {
             // var_dump($src);die();
-            redirect('auth/login', 'refresh');
+            redirect('login', 'refresh');
         }
         else
         {
