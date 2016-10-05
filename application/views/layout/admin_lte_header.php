@@ -206,7 +206,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="<?=active_link_function('interfaces')?>"><a href="<?php echo site_url('admin/prefs/interfaces/admin'); ?>"><?php echo lang('menu_interfaces'); ?></a></li>
+                                <li class="<?=active_link_function('interfaces')?>">
+                                    <a href="<?php echo site_url('admin/prefs/interfaces/admin'); ?>"><?php echo lang('menu_interfaces'); ?></a>
+                                </li>
                             </ul>
                         </li>
                         <li class="<?=active_link_controller('files')?>">
@@ -271,7 +273,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <i class="fa fa-angle-left pull-right"></i>
                             </span>
                           </a>
-                          <ul class="treeview-menu" style="display: none;">
+                          <ul class="treeview-menu">
                             <li class="<?=active_link_function('chartjs')?>">
                                 <a href="<?php echo site_url('admin_lte/charts/chartjs') ?>">
                                     <i class="fa fa-circle-o"></i> ChartJS
@@ -302,7 +304,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <i class="fa fa-angle-left pull-right"></i>
                             </span>
                           </a>
-                          <ul class="treeview-menu" style="display: none;">
+                          <ul class="treeview-menu">
                             <li class="<?=active_link_function('general')?>">
                                 <a href="<?php echo site_url('admin_lte/ui/general') ?>">
                                     <i class="fa fa-circle-o"></i> General
@@ -406,7 +408,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <i class="fa fa-angle-left pull-right"></i>
                             </span>
                           </a>
-                          <ul class="treeview-menu" style="display: none;">
+                          <ul class="treeview-menu">
                             <li class="<?=active_link_function('invoice')?>">
                                 <a href="<?php echo site_url('admin_lte/examples/invoice') ?>">
                                     <i class="fa fa-circle-o"></i> Invoice
@@ -436,7 +438,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <i class="fa fa-angle-left pull-right"></i>
                             </span>
                           </a>
-                          <ul class="treeview-menu" style="display: none;">
+                          <ul class="treeview-menu">
                             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                             <li>
                               <a href="#"><i class="fa fa-circle-o"></i> Level One

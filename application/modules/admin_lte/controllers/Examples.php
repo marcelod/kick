@@ -56,10 +56,10 @@ class Examples extends Admin_Controller {
     public function blank()
     {
         /* Title Page Blank Common */
-        $this->page_title->push('Examples Blank Invoice');
+        $this->page_title->push('Examples Blank');
         $this->data['pagetitle'] = $this->page_title->show();
 
-        $this->data['title'] = 'Examples Blank Invoice';
+        $this->data['title'] = 'Examples Blank';
 
         /* Breadcrumbs :: BLANK */
         $this->breadcrumbs->unshift(2, 'Blank', 'admin_lte/examples/blank');
@@ -74,10 +74,10 @@ class Examples extends Admin_Controller {
     public function pace()
     {
         /* Title Page Pace Common */
-        $this->page_title->push('Examples Pace Invoice');
+        $this->page_title->push('Examples Pace');
         $this->data['pagetitle'] = $this->page_title->show();
 
-        $this->data['title'] = 'Examples Pace Invoice';
+        $this->data['title'] = 'Examples Pace';
 
         /* Breadcrumbs :: PACE */
         $this->breadcrumbs->unshift(2, 'Pace', 'admin_lte/examples/pace');
