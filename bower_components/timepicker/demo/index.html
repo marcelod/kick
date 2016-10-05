@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TimePicker demos</title>
+        <link href="/vendor/bootstrap/docs/assets/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="css/timepicker.css" type="text/css" rel="stylesheet" />
+
+        <script src="/vendor/jquery/dist/jquery.js"></script>
+        <script src="/vendor/underscore/underscore.js"></script>
+        <script src="/vendor/moment/moment.js"></script>
+
+        <script src="/lib/timepicker/timepicker.js"></script>
+
+        <style>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>TimePicker demo</h1>
+
+            <div id="simple" class="demo">
+                <h2>Simple</h2>
+                <p>A timepicker instantiated with no options</p>
+                <input type="text" id="time1"/>
+                <script>
+                    var time1 = $('#time1').timepicker({});
+                </script>
+            </div>
+
+            <div id="preset" class="demo">
+                <h2>Custom intervals</h2>
+                <p>A timepicker instantiated with 10 minute intervals</p>
+                <input type="text" id="time2"/>
+                <script>
+                    var time2 = $('#time2').timepicker({
+                        interval: '00:10'
+                    });
+                </script>
+            </div>
+
+        </div>
+    </body>
+</html>

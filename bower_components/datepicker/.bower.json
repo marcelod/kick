@@ -1,0 +1,28 @@
+{
+  "name": "datepicker",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "letsub"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kanglei1130/datepicker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1905c0d15b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1905c0d15b14ef691bf82eb0ac16a4b52050f39f"
+  },
+  "_source": "https://github.com/kanglei1130/datepicker.git",
+  "_target": "*",
+  "_originalSource": "datepicker",
+  "_direct": true
+}

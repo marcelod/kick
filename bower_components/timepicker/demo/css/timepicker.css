@@ -1,0 +1,46 @@
+body {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.time-picker {
+    width: 92px;
+}
+
+.time-picker {
+    position: absolute;
+    z-index: 99999;
+    list-style: none;
+    height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #fff;
+    border: 1px solid #aaa;
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+
+.time-picker li {
+    font-size: 12px;
+    padding: 1px 12px;
+    cursor: pointer;
+    width: 60px;
+    color: #333;
+}
+
+.time-picker:hover .time-picker--selected {
+    background: #eee;
+}
+
+.time-picker li:hover,
+.time-picker .time-picker--selected,
+.time-picker:hover .time-picker--selected:hover {
+    background: #ddd;
+}
