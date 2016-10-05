@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Ui extends Admin_Controller {
+class Ui extends Admin_Lte_Controller {
 
     public function __construct()
     {

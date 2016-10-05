@@ -34,6 +34,8 @@ class Admin_Controller extends MY_Controller
             /* Set Template */
             $this->data['template']    = 'admin_lte';
 
+            $this->template->set_header('admin_lte_header');
+
             if ($this->router->fetch_class() == 'dashboard')
             {
                 $this->data['dashboard_alert_file_install'] = $this->core_model->get_file_install();
@@ -59,7 +61,6 @@ class Admin_Controller extends MY_Controller
             $this->template->set_layout($this->data['template']);
 
             $this->template->set_base_view('admin_lte_view');
-            $this->template->set_header('admin_lte_header');
             $this->template->set_footer('admin_lte_footer');
 
             if ( ! empty($data['title'])) {
