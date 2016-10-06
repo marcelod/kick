@@ -53,4 +53,39 @@ class MY_Controller extends MX_Controller {
             }
         }
 	}
+
+
+    public function index()
+    {
+        $this->_render_page();
+    }
+
+
+    public function _render_page($view = '', $data=null, $render=false)
+    {
+        $data = (empty($data)) ? $this->data : $data;
+
+        $view = $view !== '' ? $view : $this->router->fetch_class();
+
+        if (isset($data['template'])) {
+
+            $this->template->set_layout($this->data['template']);
+
+            $this->template->set_base_view($this->data['template']);
+
+            if ( ! empty($data['title'])) {
+                $this->template->set_title($data['title']);
+            }
+
+            $this->template->load_view($view, $data);
+        }
+        else {
+            $this->viewdata = (empty($data)) ? $this->data: $data;
+
+            $view_html = $this->load->view($view, $this->viewdata, $render);
+
+            if (!$render) return $view_html;
+        }
+    }
+
 }

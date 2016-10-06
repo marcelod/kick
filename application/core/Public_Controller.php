@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Public_Controller extends MY_Controller
 {
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -23,41 +24,5 @@ class Public_Controller extends MY_Controller
             $this->data['logout_link'] = TRUE;
         }
 	}
-
-
-    public function index()
-    {
-        $this->_render_page();
-    }
-
-
-    protected function _render_page($view = '', $data=null, $render=false)
-    {
-        $data = (empty($data)) ? $this->data : $data;
-
-        $view = $view !== '' ? $view : $this->router->fetch_class();
-
-        if (isset($data['template'])) {
-
-            $this->template->set_layout($this->data['template']);
-
-            $this->template->set_base_view('default_view');
-            $this->template->set_header('default_header');
-            $this->template->set_footer('default_footer');
-
-            if ( ! empty($data['title'])) {
-                $this->template->set_title($data['title']);
-            }
-
-            $this->template->load_view($view, $data);
-        }
-        else {
-            $this->viewdata = (empty($data)) ? $this->data: $data;
-
-            $view_html = $this->load->view($view, $this->viewdata, $render);
-
-            if (!$render) return $view_html;
-        }
-    }
 
 }
