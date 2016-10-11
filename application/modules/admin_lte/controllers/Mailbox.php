@@ -9,20 +9,31 @@ class Mailbox extends Admin_Lte_Controller {
 
         /* Breadcrumbs :: Common */
         $this->breadcrumbs->unshift(1, 'Mailbox', 'admin_lte/mailbox');
+
+        $this->template->add_css('bower_components/fullcalendar/dist/fullcalendar.min.css');
+        $this->template->add_css('bower_components/fullcalendar/dist/fullcalendar.print.css');
+
+        // <link rel="stylesheet" href="../../plugins/fullcalendar/fullcalendar.print.css" media="print">
     }
 
     public function index()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Mailbox');
-        $this->data['pagetitle'] = $this->page_title->show();
+        $this->show();
+    }
 
-        $this->data['title'] = 'Mailbox';
+    public function compose()
+    {
+        $this->template->add_css('bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css');
 
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
+        $this->template->add_js('bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js');
+        $this->template->add_js('admin_lte/mailbox/compose.js');
 
-        /* Render page*/
-        $this->_render_page('admin_lte/mailbox/index', $this->data);
+        $this->show();
+    }
+
+    public function read_mail()
+    {
+        $this->show();
     }
 
 }

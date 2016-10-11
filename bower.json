@@ -24,7 +24,6 @@
     "font-awesome": "^4.6.3",
     "respond": "^1.4.2",
     "bootstrap-slider": "*",
-    "bootstrap-wysihtml5": "*",
     "chart.js": "chartjs#^2.3.0",
     "ckeditor": "^4.5.11",
     "colorpicker": "^1.2.4",
