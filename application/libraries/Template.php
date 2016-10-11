@@ -220,7 +220,12 @@ class Template {
         $css = array();
         foreach ($this->css as $css_file)
         {
-            $css[] = '<link rel="stylesheet" href="' . assets_url('css/' . $css_file) . '">';
+            if (strpos($css_file, 'bower_components') !== FALSE) {
+                $css[] = '<link rel="stylesheet" href="' . base_url($css_file) . '">';
+            } else {
+                $css[] = '<link rel="stylesheet" href="' . assets_url('css/' . $css_file) . '">';
+            }
+
         }
         $css = implode('', $css);
 

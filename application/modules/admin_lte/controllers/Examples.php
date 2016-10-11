@@ -37,6 +37,10 @@ class Examples extends Admin_Lte_Controller {
 
     public function pace()
     {
+        $this->template->add_css('bower_components/PACE/themes/green/pace-theme-barber-shop.css');
+        $this->template->add_js('bower_components/PACE/pace.min.js');
+        $this->template->add_js('admin_lte/examples/pace.js');
+
        $this->show();
     }
 
