@@ -312,7 +312,7 @@
                     </a>
                 </li>
                 <li class="<?=active_link_function('data')?>">
-                    <a href="<?php echo site_url('admin_lte/tables/data') ?>">
+                    <a href="<?php echo site_url('admin_lte/tables/data_tables') ?>">
                         <i class="fa fa-circle-o"></i> Data tables
                     </a>
                 </li>

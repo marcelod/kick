@@ -13,44 +13,23 @@ class Tables extends Admin_Lte_Controller {
 
     public function index()
     {
-        $this->simple();
+        redirect('admin_lte/tables/simple','refresh');
     }
-
 
 	public function simple()
     {
-        /* Title Page :: Simple */
-        $this->page_title->push('Tables - Simple');
-        $this->data['pagetitle'] = $this->page_title->show();
-
-        $this->data['title'] = 'Tables - Simple';
-
-        /* Breadcrumbs :: SIMPLE */
-        $this->breadcrumbs->unshift(2, 'Simple', 'admin_lte/tables/simple');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/tables/simple', $this->data);
+        $this->show();
     }
 
-
-    public function data()
+    public function data_tables()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Tables - Data');
-        $this->data['pagetitle'] = $this->page_title->show();
+        $this->template->add_css('bower_components/datatables/media/css/dataTables.bootstrap.min.css');
 
-        $this->data['title'] = 'Tables - Data';
+        $this->template->add_js('bower_components/datatables/media/js/jquery.dataTables.min.js');
+        $this->template->add_js('bower_components/datatables/media/js/dataTables.bootstrap.min.js');
+        $this->template->add_js('admin_lte/data_tables/example.js');
 
-        /* Breadcrumbs :: DATA */
-        $this->breadcrumbs->unshift(2, 'Data', 'admin_lte/tables/data');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/tables/data', $this->data);
+        $this->show();
     }
-
 
 }
