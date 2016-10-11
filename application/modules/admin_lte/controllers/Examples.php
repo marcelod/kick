@@ -13,79 +13,32 @@ class Examples extends Admin_Lte_Controller {
 
     public function index()
     {
-        $this->invoice();
+        redirect('admin_lte/examples/invoice','refresh');
     }
 
 
-	public function invoice()
+    public function invoice()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Examples - Invoice');
-        $this->data['pagetitle'] = $this->page_title->show();
-
-        $this->data['title'] = 'Examples - Invoice';
-
-        /* Breadcrumbs :: INVOICE */
-        $this->breadcrumbs->unshift(2, 'Invoice', 'admin_lte/examples/invoice');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/examples/invoice', $this->data);
+        $this->show();
     }
 
 
     public function profile()
     {
-        /* Title Page :: Profile */
-        $this->page_title->push('Examples - Profile');
-        $this->data['pagetitle'] = $this->page_title->show();
-
-        $this->data['title'] = 'Examples - Profile';
-
-        /* Breadcrumbs :: PROFILE */
-        $this->breadcrumbs->unshift(2, 'Profile', 'admin_lte/examples/profile');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/examples/profile', $this->data);
+        $this->show();
     }
 
 
     public function blank()
     {
-        /* Title Page Blank Common */
-        $this->page_title->push('Examples Blank');
-        $this->data['pagetitle'] = $this->page_title->show();
-
-        $this->data['title'] = 'Examples Blank';
-
-        /* Breadcrumbs :: BLANK */
-        $this->breadcrumbs->unshift(2, 'Blank', 'admin_lte/examples/blank');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/examples/blank', $this->data);
+        $this->show();
     }
 
 
     public function pace()
     {
-        /* Title Page Pace Common */
-        $this->page_title->push('Examples Pace');
-        $this->data['pagetitle'] = $this->page_title->show();
-
-        $this->data['title'] = 'Examples Pace';
-
-        /* Breadcrumbs :: PACE */
-        $this->breadcrumbs->unshift(2, 'Pace', 'admin_lte/examples/pace');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/examples/pace', $this->data);
+       $this->show();
     }
+
 
 }

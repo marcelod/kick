@@ -11,6 +11,9 @@
         	<?php echo $main_content; ?>
     </div><!-- /.content-wrapper -->
 
+
     <?php echo $footer; ?>
+
+    <?php $this->load->view('layout/admin_lte/ctrl_sidebar'); ?>
 
 </div>

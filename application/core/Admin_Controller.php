@@ -46,4 +46,30 @@ class Admin_Controller extends MY_Controller
         }
     }
 
+
+    protected function show()
+    {
+        $name_class  = $this->router->fetch_class();
+        $name_method = $this->router->fetch_method();
+
+        // echo $name_class;die();
+
+        $title = 'Examples - ' . ucfirst($name_method);
+        $name_template = $this->data['template'];
+
+        /* Title Page */
+        $this->page_title->push($title);
+        $this->data['pagetitle'] = $this->page_title->show();
+
+        $this->data['title'] = $title;
+
+        /* Breadcrumbs */
+        $this->breadcrumbs->unshift(2, ucfirst($name_method), $name_template . '/' . $name_class . '/' . $name_method);
+
+        $this->data['breadcrumb'] = $this->breadcrumbs->show();
+
+        /* Render page*/
+        $this->_render_page($name_template . '/' . $name_class . '/' . $name_method, $this->data);
+    }
+
 }
