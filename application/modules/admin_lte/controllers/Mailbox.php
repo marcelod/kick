@@ -9,11 +9,6 @@ class Mailbox extends Admin_Lte_Controller {
 
         /* Breadcrumbs :: Common */
         $this->breadcrumbs->unshift(1, 'Mailbox', 'admin_lte/mailbox');
-
-        $this->template->add_css('bower_components/fullcalendar/dist/fullcalendar.min.css');
-        $this->template->add_css('bower_components/fullcalendar/dist/fullcalendar.print.css');
-
-        // <link rel="stylesheet" href="../../plugins/fullcalendar/fullcalendar.print.css" media="print">
     }
 
     public function index()

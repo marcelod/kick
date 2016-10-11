@@ -13,16 +13,17 @@ class Calendar extends Admin_Lte_Controller {
 
     public function index()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Calendar');
-        $this->data['pagetitle'] = $this->page_title->show();
 
-        $this->data['title'] = 'Calendar';
+        $this->template->add_css('bower_components/fullcalendar/dist/fullcalendar.min.css');
+        // $this->template->add_css('bower_components/fullcalendar/dist/fullcalendar.print.css');
+        // fix = ver como adicionar um css com media=print
 
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
+        $this->template->add_js('bower_components/jquery-ui/jquery-ui.min.js');
+        $this->template->add_js('bower_components/moment/min/moment.min.js');
+        $this->template->add_js('bower_components/fullcalendar/dist/fullcalendar.min.js');
+        $this->template->add_js('admin_lte/fullcalendar/example.js');
 
-        /* Render page*/
-        $this->_render_page('admin_lte/calendar/index', $this->data);
+        $this->show();
     }
 
 }

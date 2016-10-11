@@ -52,12 +52,9 @@
             <link rel="stylesheet" href="<?php echo base_url('bower_components/animsition/dist/css/animsition.min.css'); ?>">
         <?php endif; ?>
 
-        <!-- esse nao ira mais ser passado assim, a remover -->
-        <?php if ($this->router->fetch_class() == 'groups' && ($this->router->fetch_method() == 'create' OR $this->router->fetch_method() == 'edit')): ?>
-            <link rel="stylesheet" href="<?php echo base_url('bower_components/bootstrap-colorpickersliders/dist/bootstrap.colorpickersliders.min.css'); ?>">
-        <?php endif; ?>
-
         <link rel="stylesheet" href="<?php echo base_url($frameworks_dir . '/domprojects/css/dp.min.css'); ?>">
+
+        <link rel="stylesheet" media="print" href="<?php echo base_url('bower_components/fullcalendar/dist/fullcalendar.print.css'); ?>">
 
         <?php echo $css; ?>
 
@@ -84,15 +81,6 @@
 
         <?php if ($admin_prefs['transition_page'] == TRUE): ?>
             <script src="<?php echo base_url('bower_components/animsition/dist/js/animsition.min.js'); ?>"></script>
-        <?php endif; ?>
-
-        <?php if ($this->router->fetch_class() == 'users' && ($this->router->fetch_method() == 'create' OR $this->router->fetch_method() == 'edit')): ?>
-            <script src="<?php echo base_url('bower_components/pwstrength-bootstrap/dist/pwstrength-bootstrap.min.js'); ?>"></script>
-        <?php endif; ?>
-
-        <?php if ($this->router->fetch_class() == 'groups' && ($this->router->fetch_method() == 'create' OR $this->router->fetch_method() == 'edit')): ?>
-            <script src="<?php echo base_url('bower_components/tinycolor/dist/tinycolor-min.js'); ?>"></script>
-            <script src="<?php echo base_url('bower_components/bootstrap-colorpickersliders/dist/bootstrap.colorpickersliders.min.js'); ?>"></script>
         <?php endif; ?>
 
         <script src="<?php echo base_url($frameworks_dir . '/adminlte/js/adminlte.min.js'); ?>"></script>
