@@ -15,9 +15,9 @@
         <!-- favicon.ico and apple-touch-icon.png -->
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="<?php echo base_url($frameworks_dir . '/bootstrap/css/bootstrap.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
         <!-- Font-Awesome CSS -->
-        <link rel="stylesheet" href="<?php echo base_url($frameworks_dir . '/font-awesome/css/font-awesome.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css'); ?>">
         <!-- Custom styles -->
         <link rel="stylesheet" href="<?php echo base_url($frameworks_dir . '/public/css/main.css'); ?>">
         <?php echo $css; ?>
@@ -25,8 +25,8 @@
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
-            <script src="<?php echo assets_url('js/html5shiv.min.js'); ?>"></script>
-            <script src="<?php echo assets_url('js/respond.min.js'); ?>"></script>
+            <script src="<?php echo base_url('bower_components/html5shiv/dist/html5shiv.min.js'); ?>"></script>
+            <script src="<?php echo base_url('bower_components/respond/dest/respond.min.js'); ?>"></script>
         <![endif]-->
 
         <script>
@@ -37,8 +37,9 @@
         <?php echo $body; ?>
         <!-- / -->
 
-        <script src="<?php echo base_url($frameworks_dir . '/jquery/jquery.min.js'); ?>"></script>
-        <script src="<?php echo base_url($frameworks_dir . '/bootstrap/js/bootstrap.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bower_components/jquery/dist/jquery.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+
         <script src="<?php echo base_url($frameworks_dir . '/public/js/main.js'); ?>"></script>
         <!-- Extra javascript -->
         <?php echo $js; ?>
