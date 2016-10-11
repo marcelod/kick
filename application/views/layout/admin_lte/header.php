@@ -256,11 +256,6 @@
                         <i class="fa fa-circle-o"></i> Buttons
                     </a>
                 </li>
-                <li class="<?=active_link_function('sliders')?>">
-                    <a href="<?php echo site_url('admin_lte/ui/sliders') ?>">
-                        <i class="fa fa-circle-o"></i> Sliders
-                    </a>
-                </li>
                 <li class="<?=active_link_function('timeline')?>">
                     <a href="<?php echo site_url('admin_lte/ui/timeline') ?>">
                         <i class="fa fa-circle-o"></i> Timeline
