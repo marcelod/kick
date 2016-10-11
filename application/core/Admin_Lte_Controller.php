@@ -14,11 +14,13 @@ class Admin_Lte_Controller extends Admin_Controller
 
     protected function show()
     {
+        $this->load->helper('inflector');
+
         $name_class  = $this->router->fetch_class();
         $name_method = $this->router->fetch_method();
-        $name_compose = $name_method == 'index' ? ucfirst($name_class) : ucfirst($name_method);
+        $name_compose = $name_method == 'index' ? humanize($name_class) : humanize($name_method);
 
-        $title = 'Examples - ' . $name_compose;
+        $title = humanize($name_class) . ' - ' . $name_compose;
         $name_template = $this->data['template'];
 
         /* Title Page */
@@ -28,7 +30,9 @@ class Admin_Lte_Controller extends Admin_Controller
         $this->data['title'] = $title;
 
         /* Breadcrumbs */
-        $this->breadcrumbs->unshift(2, $name_compose, $name_template . '/' . $name_class . '/' . $name_method);
+        if ($name_method != 'index') {
+            $this->breadcrumbs->unshift(2, $name_compose, $name_template . '/' . $name_class . '/' . $name_method);
+        }
 
         $this->data['breadcrumb'] = $this->breadcrumbs->show();
 
