@@ -52,8 +52,6 @@ class Admin_Controller extends MY_Controller
         $name_class  = $this->router->fetch_class();
         $name_method = $this->router->fetch_method();
 
-        // echo $name_class;die();
-
         $title = 'Examples - ' . ucfirst($name_method);
         $name_template = $this->data['template'];
 
