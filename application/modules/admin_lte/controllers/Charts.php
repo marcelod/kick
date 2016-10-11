@@ -13,79 +13,57 @@ class Charts extends Admin_Lte_Controller {
 
     public function index()
     {
-        $this->chartjs();
+        redirect('admin_lte/charts/chartjs','refresh');
     }
 
 
 	public function chartjs()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Charts - ChartJS');
-        $this->data['pagetitle'] = $this->page_title->show();
+        $this->template->add_js('bower_components/Chart.js/Chart.js');
+        $this->template->add_js('admin_lte/charts/chartjs.js');
 
-        $this->data['title'] = 'Charts - ChartJS';
-
-        /* Breadcrumbs :: CHARTJS */
-        $this->breadcrumbs->unshift(2, 'ChartJS', 'admin_lte/charts/chartjs');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/charts/chartjs', $this->data);
+        $this->show();
     }
 
 
     public function morris()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Charts - Morris');
-        $this->data['pagetitle'] = $this->page_title->show();
+        $this->template->add_css('bower_components/morris.js/morris.css');
 
-        $this->data['title'] = 'Charts - Morris';
+        $this->template->add_js('bower_components/raphael/raphael.min.js');
+        $this->template->add_js('bower_components/morris.js/morris.js');
+        $this->template->add_js('admin_lte/charts/morris.js');
 
-        /* Breadcrumbs :: MORRIS */
-        $this->breadcrumbs->unshift(2, 'Morris', 'admin_lte/charts/morris');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/charts/morris', $this->data);
+        $this->show();
     }
 
 
     public function flot()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Charts - Flot');
-        $this->data['pagetitle'] = $this->page_title->show();
+        $this->template->add_js('bower_components/Flot/jquery.flot.js');
+        //  FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized
+        $this->template->add_js('bower_components/Flot/jquery.flot.resize.js');
+         // FLOT PIE PLUGIN - also used to draw donut charts
+        $this->template->add_js('bower_components/Flot/jquery.flot.pie.js');
+         // FLOT CATEGORIES PLUGIN - Used to draw bar charts
+        $this->template->add_js('bower_components/Flot/jquery.flot.categories.js');
 
-        $this->data['title'] = 'Charts - Flot';
+        $this->template->add_js('admin_lte/charts/flot.js');
 
-        /* Breadcrumbs :: FLOT */
-        $this->breadcrumbs->unshift(2, 'Flot', 'admin_lte/charts/flot');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/charts/flot', $this->data);
+        $this->show();
     }
 
 
-    public function chartjs()
+    public function inline()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Charts - Inline');
-        $this->data['pagetitle'] = $this->page_title->show();
+        // jQuery Knob
+        $this->template->add_js('bower_components/jquery-knob/dist/jquery.knob.min.js');
+        // Sparkline
+        $this->template->add_js('bower_components/sparkline/dist/jquery.sparkline.min.js');
 
-        $this->data['title'] = 'Charts - Inline';
+        $this->template->add_js('admin_lte/charts/inline.js');
 
-        /* Breadcrumbs :: INLINE */
-        $this->breadcrumbs->unshift(2, 'Inline', 'admin_lte/charts/inline');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/charts/inline', $this->data);
+        $this->show();
     }
 
 

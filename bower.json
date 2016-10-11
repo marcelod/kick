@@ -23,7 +23,6 @@
     "html5shiv": "^3.7.3",
     "font-awesome": "^4.6.3",
     "respond": "^1.4.2",
-    "chart.js": "chartjs#^2.3.0",
     "ckeditor": "^4.5.11",
     "colorpicker": "^1.2.4",
     "datatables": "^1.10.12",
@@ -48,6 +47,7 @@
     "animsition": "^4.0.2",
     "tinycolor": "bgrins/TinyColor#^1.4.1",
     "bootstrap-colorpickersliders": "istvan-ujjmeszaros/bootstrap-colorpickersliders#^3.0.1",
-    "pwstrength-bootstrap": "ablanco/jquery.pwstrength.bootstrap#^2.0.3"
+    "pwstrength-bootstrap": "ablanco/jquery.pwstrength.bootstrap#^2.0.3",
+    "Chart.js": "chart.js#1"
   }
 }

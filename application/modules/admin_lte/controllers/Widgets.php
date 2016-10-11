@@ -13,16 +13,7 @@ class Widgets extends Admin_Lte_Controller {
 
     public function index()
     {
-        /* Title Page :: Common */
-        $this->page_title->push('Widgets');
-        $this->data['pagetitle'] = $this->page_title->show();
-
-        $this->data['title'] = 'Widgets';
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/widgets/index', $this->data);
+        $this->show();
     }
 
 }
