@@ -24,11 +24,8 @@
     "font-awesome": "^4.6.3",
     "respond": "^1.4.2",
     "ckeditor": "^4.5.11",
-    "colorpicker": "^1.2.4",
     "datatables": "^1.10.12",
     "datatables-plugins": "^1.10.12",
-    "datepicker": "*",
-    "daterangepicker": "^1.5.2",
     "fastclick": "^1.0.6",
     "Flot": "flot#^0.8.3",
     "fullcalendar": "^3.0.1",
@@ -40,7 +37,7 @@
     "sparkline": "^2.1.2",
     "jquery-knob": "^1.2.13",
     "morris.js": "morrisjs#^0.5.1",
-    "jquery.inputmask": "^3.3.3",
+    "jquery.inputmask": "RobinHerbots/Inputmask#^3.3.3",
     "bootstrap-timepicker": "^0.5.2",
     "ion.rangeSlider": "ionrangeslider#^2.1.4",
     "Ionicons": "ionicons#^2.0.1",
@@ -48,6 +45,9 @@
     "tinycolor": "bgrins/TinyColor#^1.4.1",
     "bootstrap-colorpickersliders": "istvan-ujjmeszaros/bootstrap-colorpickersliders#^3.0.1",
     "pwstrength-bootstrap": "ablanco/jquery.pwstrength.bootstrap#^2.0.3",
-    "Chart.js": "chart.js#1"
+    "Chart.js": "chart.js#1",
+    "bootstrap-daterangepicker": "dangrossman/bootstrap-daterangepicker#^2.1.24",
+    "bootstrap-datepicker": "uxsolutions/bootstrap-datepicker#^1.6.4",
+    "moment": "^2.15.1"
   }
 }
