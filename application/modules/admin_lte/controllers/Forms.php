@@ -66,6 +66,13 @@ class Forms extends Admin_Lte_Controller {
 
     public function editors()
     {
+        $this->template->add_css('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css');
+
+        $this->template->add_js('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js');
+        $this->template->add_js('bower_components/ckeditor/ckeditor.js');
+
+        $this->template->add_js('admin_lte/forms/ckeditor.js');
+
         $this->show();
     }
 

@@ -39,8 +39,7 @@
     "tag": "3.3.3",
     "commit": "9d324725e4b63aa9350590892b93f1b6a5fd2548"
   },
-  "_source": "https://github.com/RobinHerbots/jquery.inputmask.git",
+  "_source": "git://github.com/RobinHerbots/Inputmask.git",
   "_target": "^3.3.3",
-  "_originalSource": "jquery.inputmask",
-  "_direct": true
+  "_originalSource": "RobinHerbots/Inputmask"
 }
