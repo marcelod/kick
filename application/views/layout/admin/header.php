@@ -237,7 +237,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                         <li>
-                            <a href="<?php echo site_url('admin_lte/examples/blank'); ?>">
+                            <a href="<?php echo site_url('admin_lte/dash/v1'); ?>">
                                 <i class="fa fa-diamond"></i> AdminLTE</span>
                             </a>
                         </li>

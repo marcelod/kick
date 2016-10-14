@@ -59,7 +59,7 @@ class Charts extends Admin_Lte_Controller {
         // jQuery Knob
         $this->template->add_js('bower_components/jquery-knob/dist/jquery.knob.min.js');
         // Sparkline
-        $this->template->add_js('bower_components/sparkline/dist/jquery.sparkline.min.js');
+        $this->template->add_js('assets/plugins/sparkline/jquery.sparkline.min.js');
 
         $this->template->add_js('admin_lte/charts/inline.js');
 

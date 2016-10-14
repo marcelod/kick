@@ -13,61 +13,67 @@ class Forms extends Admin_Lte_Controller {
 
     public function index()
     {
-        $this->general();
+        redirect('admin_lte/forms/general','refresh');
     }
 
 
     public function general()
     {
-        /* Title Page :: General */
-        $this->page_title->push('Forms - General');
-        $this->data['pagetitle'] = $this->page_title->show();
-
-        $this->data['title'] = 'Forms - General';
-
-        /* Breadcrumbs :: GENERAL */
-        $this->breadcrumbs->unshift(2, 'general', 'admin_lte/forms/general');
-
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/forms/general', $this->data);
+        $this->show();
     }
 
 
     public function advanced()
     {
-        /* Title Page :: Advanced */
-        $this->page_title->push('Forms - Advanced');
-        $this->data['pagetitle'] = $this->page_title->show();
+        // daterange picker
+        $this->template->add_css('bower_components/bootstrap-daterangepicker/daterangepicker.css');
+        // bootstrap datepicker
+        $this->template->add_css('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css');
+        // iCheck for checkboxes and radio inputs
+        $this->template->add_css('bower_components/iCheck/skins/all.css');
+        // Bootstrap Color Picker
+        $this->template->add_css('assets/plugins/colorpicker/bootstrap-colorpicker.min.css');
+        // Bootstrap time Picker
+        $this->template->add_css('bower_components/bootstrap-timepicker/css/bootstrap-timepicker.min.css');
+        // Select2
+        $this->template->add_css('bower_components/select2/dist/css/select2.min.css');
 
-        $this->data['title'] = 'Forms - Advanced';
+        // Select2
+        $this->template->add_js('bower_components/select2/dist/js/select2.full.min.js');
+        // InputMask
+        $this->template->add_js('bower_components/jquery.inputmask/dist/min/inputmask/jquery.inputmask.min.js');
+        $this->template->add_js('bower_components/jquery.inputmask/dist/min/inputmask/inputmask.date.extensions.min.js');
+        $this->template->add_js('bower_components/jquery.inputmask/dist/min/inputmask/inputmask.extensions.min.js');
+        // date-range-picker
+        $this->template->add_js('bower_components/moment/min/moment.min.js');
+        $this->template->add_js('bower_components/bootstrap-daterangepicker/daterangepicker.js');
+        // bootstrap datepicker
+        $this->template->add_js('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
+        // bootstrap color picker
+        $this->template->add_js('assets/plugins/colorpicker/bootstrap-colorpicker.min.js');
+        // bootstrap time picker
+        $this->template->add_js('bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js');
+        // SlimScroll 1.3.0
+        $this->template->add_js('bower_components/jquery-slimscroll/jquery.slimscroll.min.js');
+        // iCheck
+        $this->template->add_js('bower_components/iCheck/icheck.min.js');
 
-        /* Breadcrumbs :: ADVANCED */
-        $this->breadcrumbs->unshift(2, 'advanced', 'admin_lte/forms/advanced');
+        $this->template->add_js('admin_lte/forms/advanced.js');
 
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/forms/advanced', $this->data);
+        $this->show();
     }
 
 
     public function editors()
     {
-        /* Title Page :: Editors */
-        $this->page_title->push('Forms - Editors');
-        $this->data['pagetitle'] = $this->page_title->show();
+        $this->template->add_css('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css');
 
-        $this->data['title'] = 'Forms - Editors';
+        $this->template->add_js('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js');
+        $this->template->add_js('bower_components/ckeditor/ckeditor.js');
 
-        /* Breadcrumbs :: EDITORS */
-        $this->breadcrumbs->unshift(2, 'editors', 'admin_lte/forms/editors');
+        $this->template->add_js('admin_lte/forms/ckeditor.js');
 
-        $this->data['breadcrumb'] = $this->breadcrumbs->show();
-
-        /* Render page*/
-        $this->_render_page('admin_lte/forms/editors', $this->data);
+        $this->show();
     }
 
 

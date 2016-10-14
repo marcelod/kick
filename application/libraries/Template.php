@@ -210,6 +210,8 @@ class Template {
         {
             if (strpos($js_file, 'bower_components') !== FALSE) {
                 $js[] = '<script src="' . base_url($js_file) . '"></script>';
+            } else if (strpos($js_file, 'plugins') !== FALSE) {
+                $js[] = '<script src="' . base_url($js_file) . '"></script>';
             } else {
                 $js[] = '<script src="' . assets_url('js/' . $js_file) . '"></script>';
             }
@@ -221,6 +223,8 @@ class Template {
         foreach ($this->css as $css_file)
         {
             if (strpos($css_file, 'bower_components') !== FALSE) {
+                $css[] = '<link rel="stylesheet" href="' . base_url($css_file) . '">';
+            } else if (strpos($css_file, 'plugins') !== FALSE) {
                 $css[] = '<link rel="stylesheet" href="' . base_url($css_file) . '">';
             } else {
                 $css[] = '<link rel="stylesheet" href="' . assets_url('css/' . $css_file) . '">';
