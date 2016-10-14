@@ -1,0 +1,23 @@
+{
+  "name": "daterangepicker",
+  "version": "1.5.2",
+  "main": "lib/daterangepicker/daterangepicker.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "timepicker": "git://github.com/BrandwatchLtd/timepicker.git#~0.2.0",
+    "jquery": "~3.1.0",
+    "underscore": "~1.8.3",
+    "moment": "~2.10.3",
+    "moment-timezone": "~0.3.1"
+  },
+  "devDependencies": {
+    "expectations": "~0.6.0",
+    "requirejs": "~2.1.14",
+    "mocha": "~2.5.3",
+    "bootstrap": "~2.1.1"
+  }
+}

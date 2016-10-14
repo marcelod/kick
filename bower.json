@@ -1,17 +1,15 @@
 {
   "name": "kick",
-  "version": "0.0.1",
-  "homepage": "https://github.com/marcelod/kick",
   "authors": [
-    "Marcelo Diniz"
+    "Marcelo Diniz <marcelo.leo27@gmail.com>"
   ],
-  "description": "Kick Start",
-  "keywords": [
-    "kick",
-    "template",
-    "codeigniter"
+  "description": "Kick Start project using CodeIgniter, HMVC, AdminLTE and more",
+  "main": [
+    "assets/css/main.css",
+    "assets/js/main.js"
   ],
   "license": "MIT",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -19,25 +17,37 @@
     "test",
     "tests"
   ],
-  "main": [
-    "assets/css/main.css",
-    "assets/js/main.js"
-  ],
   "dependencies": {
-    "jquery": "~1.11.3",
-    "bootstrap": "~3.3.6",
-    "font-awesome": "~4.4.0",
-    "metisMenu": "~1.1.3",
-    "morrisjs": "~0.5.1",
-    "angular": "~1.5.3",
-    "angular-route": "~1.5.3",
-    "angular-resource": "~1.5.3",
-    "angular-cookies": "~1.5.3",
-    "ionicons": "~2.0.1",
-    "jQuery-slimScroll": "rochal/jQuery-slimScroll#~1.3.7",
-    "fastclick": "ftlabs/fastclick#~1.0.6"
-  },
-  "resolutions": {
-    "font-awesome": "~4.5.0"
+    "jquery": "2.*",
+    "bootstrap": "^3.3.7",
+    "html5shiv": "^3.7.3",
+    "font-awesome": "^4.6.3",
+    "respond": "^1.4.2",
+    "ckeditor": "^4.5.11",
+    "colorpicker": "^1.2.4",
+    "datatables": "^1.10.12",
+    "datatables-plugins": "^1.10.12",
+    "datepicker": "*",
+    "daterangepicker": "^1.5.2",
+    "fastclick": "^1.0.6",
+    "Flot": "flot#^0.8.3",
+    "fullcalendar": "^3.0.1",
+    "iCheck": "^1.0.2",
+    "jvectormap": "^2.0.4",
+    "PACE": "pace#^1.0.2",
+    "select2": "^4.0.3",
+    "jquery-slimscroll": "slimScroll#^1.3.8",
+    "sparkline": "^2.1.2",
+    "jquery-knob": "^1.2.13",
+    "morris.js": "morrisjs#^0.5.1",
+    "jquery.inputmask": "^3.3.3",
+    "bootstrap-timepicker": "^0.5.2",
+    "ion.rangeSlider": "ionrangeslider#^2.1.4",
+    "Ionicons": "ionicons#^2.0.1",
+    "animsition": "^4.0.2",
+    "tinycolor": "bgrins/TinyColor#^1.4.1",
+    "bootstrap-colorpickersliders": "istvan-ujjmeszaros/bootstrap-colorpickersliders#^3.0.1",
+    "pwstrength-bootstrap": "ablanco/jquery.pwstrength.bootstrap#^2.0.3",
+    "Chart.js": "chart.js#1"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "name": "timepicker",
+  "version": "0.2.1",
+  "main": "lib/timepicker/timepicker.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "~3.1.0",
+    "underscore": "~1.8.3",
+    "moment": "~2.10.3"
+  },
+  "devDependencies": {
+    "expectations": "~0.2.6",
+    "requirejs": "~2.1.14",
+    "mocha": "~1.20.1",
+    "bootstrap": "~2.1.1",
+    "sinon": "1.17.4"
+  },
+  "homepage": "https://github.com/BrandwatchLtd/timepicker",
+  "_release": "0.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.1",
+    "commit": "3cdaebac54119b7cac2c5a31df41bc9daca4121d"
+  },
+  "_source": "git://github.com/BrandwatchLtd/timepicker.git",
+  "_target": "~0.2.0",
+  "_originalSource": "git://github.com/BrandwatchLtd/timepicker.git"
+}

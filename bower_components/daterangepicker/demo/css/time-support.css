@@ -1,0 +1,62 @@
+.time-support,
+.time-support__panel-wrapper.isOpen {
+    display: table;
+}
+.time-support,
+.time-support__panel-wrapper {
+    width: 100%;
+    position: relative;
+}
+.time-support__panel-wrapper {
+    height: 0;
+    display: none;
+}
+.time-support__panel-wrapper.isOpen {
+    height: auto;
+}
+.time-support__panel-wrapper .time-support__panel {
+    position: absolute;
+}
+.time-support__panel-wrapper.isOpen .time-support__panel {
+    position: relative;
+    display: table-cell;
+    padding: 6px 12px;
+    width: 50%;
+    border-top: 1px solid #ccc;
+}
+.time-support__specify-time {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    margin: 0;
+}
+.time-support__specify-time input[name="specifyTime"] {
+    margin: 0;
+}
+.time-support__panel:nth-of-type(1) {
+    border-right: 1px solid #ccc;
+    text-align: right;
+}
+.time-support__field {
+    width: 40px;
+    margin: 0;
+    border: 1px solid #aaa;
+    padding: 2px 4px;
+    margin-left: 6px;
+}
+.time-support__field.invalid-time {
+    border-color: #BF8983;
+    background-color: #FDEAE8;
+    color: #8A0A0A;
+}
+.time-support__to,
+.time-support__from,
+.time-support__field,
+.time-support__zone {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+.time-support__zone {
+    padding: 0 6px
+}

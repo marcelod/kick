@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+cd $(dirname $0)
+
+findRandomTcpPort(){
+    port=$(( 1024+( $(od -An -N2 -i /dev/random) )%(64512+1) ))
+    while :
+    do
+        (echo >/dev/tcp/localhost/$port) &>/dev/null &&  port=$(( 1024+( $(od -An -N2 -i /dev/random) )%(64512+1) )) || break
+    done
+    echo "$port"
+}
+
+npm install
+export PATH=$PATH:$(npm bin)
+
+USE_PORT=$(findRandomTcpPort)
+
+echo Running testem
+testem ci -l phantomjs -p $USE_PORT

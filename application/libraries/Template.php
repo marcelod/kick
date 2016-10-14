@@ -1,4 +1,5 @@
-<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * Template Library
@@ -9,14 +10,14 @@ class Template {
 
     private $_ci;
 
-    protected $brand_name = 'Kick';
+    protected $brand_name      = 'Kick';
     protected $title_separator = ' - ';
-    protected $ga_id = FALSE; // UA-XXXXX-X
+    protected $ga_id           = FALSE; // UA-XXXXX-X
 
-    protected $layout = 'default';
-    protected $base_view = 'base_view';
-    protected $header = 'header';
-    protected $footer = 'footer';
+    protected $layout    = 'default';
+    protected $base_view = 'default';
+    protected $header    = 'header';
+    protected $footer    = 'footer';
 
     protected $nav_active = '';
 
@@ -219,21 +220,28 @@ class Template {
         $css = array();
         foreach ($this->css as $css_file)
         {
-            $css[] = '<link rel="stylesheet" href="' . assets_url('css/' . $css_file) . '">';
+            if (strpos($css_file, 'bower_components') !== FALSE) {
+                $css[] = '<link rel="stylesheet" href="' . base_url($css_file) . '">';
+            } else {
+                $css[] = '<link rel="stylesheet" href="' . assets_url('css/' . $css_file) . '">';
+            }
+
         }
         $css = implode('', $css);
 
-        $header = $this->_ci->load->view($this->header, array('nav_active' => $this->nav_active), TRUE);
-        $footer = $this->_ci->load->view($this->footer, array(), TRUE);
+        $local_layout = 'layout/' . $this->layout . '/';
+
+        $header = $this->_ci->load->view($local_layout . $this->header, $data, TRUE);
+        $footer = $this->_ci->load->view($local_layout . $this->footer, $data, TRUE);
         $main_content = $this->_ci->load->view($view, $data, TRUE);
 
-        $body = $this->_ci->load->view('layout/' . $this->layout, array(
+        $body = $this->_ci->load->view($local_layout . 'base', array(
             'header' => $header,
             'footer' => $footer,
             'main_content' => $main_content,
         ), TRUE);
 
-        return $this->_ci->load->view($this->base_view, array(
+        return $this->_ci->load->view('template/' . $this->base_view, array(
             'title' => $title,
             'description' => $description,
             'metadata' => $metadata,

@@ -1,78 +1,91 @@
-<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Load the MX_Controller class
 require APPPATH . 'third_party/MX/Controller.php';
 
 class MY_Controller extends MX_Controller {
 
-    private $_ci;
-
     public function __construct()
-    {
-        parent::__construct();
+	{
+		parent::__construct();
 
-        $this->_ci =& get_instance();
+        /* COMMON :: ADMIN & PUBLIC */
+        /* Load */
+        $this->load->database();
+        $this->load->config('dp_config');
+        $this->load->config('dp_language');
+        $this->load->config('assets');
+        $this->load->library(array('form_validation', 'ion_auth', 'template', 'common/mobile_detect'));
+        $this->load->helper(array('array', 'language', 'url'));
+        $this->load->model('common/prefs_model');
+
+        /* Data */
+        $this->data['lang']           = element($this->config->item('language'), $this->config->item('language_abbr'));
+        $this->data['charset']        = $this->config->item('charset');
+        $this->data['frameworks_dir'] = $this->config->item('frameworks_dir');
+        $this->data['plugins_dir']    = $this->config->item('plugins_dir');
+        $this->data['avatar_dir']     = $this->config->item('avatar_dir');
+
+        $this->data['mobile']    = FALSE;
+        $this->data['ios']       = FALSE;
+        $this->data['android']   = FALSE;
+        $this->data['mobile_ie'] = FALSE;
+
+        /* Any mobile device (phones or tablets) */
+        if ($this->mobile_detect->isMobile())
+        {
+            $this->data['mobile'] = TRUE;
+
+            if ($this->mobile_detect->isiOS())
+            {
+                $this->data['ios'] = TRUE;
+            }
+
+            if ($this->mobile_detect->isAndroidOS())
+            {
+                $this->data['android'] = TRUE;
+            }
+
+            if ($this->mobile_detect->getBrowsers('IE'))
+            {
+                $this->data['mobile_ie'] = TRUE;
+            }
+        }
+	}
+
+
+    public function index()
+    {
+        $this->_render_page();
     }
 
-    /**
-     * Load Javascript inside the page's body
-     * @access  public
-     * @param   string  $script
-     */
-    public function _load_script($script)
+
+    public function _render_page($view = '', $data=null, $render=false)
     {
-        if (isset($this->_ci->template) && is_object($this->_ci->template))
-        {
-            // Queue up the script to be executed after the page is completely rendered
-            echo <<< JS
-<script>
-    var CIS = CIS || { Script: { queue: [] } };
-    CIS.Script.queue.push(function() { $script });
-</script>
-JS;
+        $data = (empty($data)) ? $this->data : $data;
+
+        $view = $view !== '' ? $view : $this->router->fetch_class();
+
+        if (isset($data['template'])) {
+
+            $this->template->set_layout($this->data['template']);
+
+            $this->template->set_base_view($this->data['template']);
+
+            if ( ! empty($data['title'])) {
+                $this->template->set_title($data['title']);
+            }
+
+            $this->template->load_view($view, $data);
         }
-        else
-        {
-            echo '<script>' . $script . '</script>';
-        }
-    }
+        else {
+            $this->viewdata = (empty($data)) ? $this->data: $data;
 
+            $view_html = $this->load->view($view, $this->viewdata, $render);
 
-    protected function _get_csrf_nonce()
-    {
-        $this->load->helper('string');
-        $key   = random_string('alnum', 8);
-        $value = random_string('alnum', 20);
-        $this->session->set_flashdata('csrfkey', $key);
-        $this->session->set_flashdata('csrfvalue', $value);
-
-        return array($key => $value);
-    }
-
-    protected function _valid_csrf_nonce()
-    {
-        if ($this->input->post($this->session->flashdata('csrfkey')) !== FALSE &&
-            $this->input->post($this->session->flashdata('csrfkey')) == $this->session->flashdata('csrfvalue'))
-        {
-            return TRUE;
-        }
-        else
-        {
-            return FALSE;
+            if (!$render) return $view_html;
         }
     }
 
 }
-
-class Ajax_Controller extends MY_Controller {
-
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->load->library('response');
-    }
-}
-
-/* End of file MY_Controller.php */
-/* Location: ./application/core/MY_Controller.php */

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DateRangePicker demos</title>
+        <link href="/vendor/bootstrap/docs/assets/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="css/picker.css" type="text/css" rel="stylesheet" />
+        <link href="css/time-support.css" type="text/css" rel="stylesheet" />
+        <link href="/vendor/timepicker/demo/css/timepicker.css" type="text/css" rel="stylesheet" />
+
+        <script src="/vendor/jquery/dist/jquery.js"></script>
+        <script src="/vendor/underscore/underscore.js"></script>
+        <script src="/vendor/moment/moment.js"></script>
+        <script src="/vendor/moment-timezone/builds/moment-timezone-with-data.js"></script>
+        <script src="/vendor/timepicker/lib/timepicker/timepicker.js"></script>
+        <script src="/lib/daterangepicker/daterangepicker.js"></script>
+        <script src="/lib/daterangepicker/daterangepicker.timesupport.js"></script>
+
+        <style>
+            .demo {
+                margin:40px 0;
+            }
+
+            select {
+                margin-bottom: 0px;
+            }
+
+            #date4-utc {
+                height: 20px;
+                margin-top: 12px;
+            }
+        </style>
+
+        <script>
+            var today = moment().utc(),
+                todayStr = today.format('YYYY-MM-DD'),
+                yesterday = today.clone().subtract('days', 1),
+                yesterdayStr = yesterday.format('YYYY-MM-DD'),
+                sevenDaysAgoStr = today.clone().subtract('days', 6).format('YYYY-MM-DD');
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>DateRangePicker demo</h1>
+
+            <div id="simple" class="demo">
+                <h2>Simple</h2>
+                <p>A datepicker instantiated with no options</p>
+                <input id="date1">
+                <div id="picker1"></div>
+
+                <script>
+                    $('#date1').daterangepicker();
+                </script>
+            </div>
+
+            <div id="singleDate" class="demo">
+                <h2>Single date</h2>
+                <p>A datepicker instantiated with just one date</p>
+                <input id="date5">
+                <div id="picker5"></div>
+
+                <script>
+                    $('#date5').daterangepicker({
+                        singleDate: true
+                    });
+                </script>
+            </div>
+
+            <div id="timeSupport" class="demo">
+                <h2>Time Support</h2>
+                <p>A datepicker instantiated with the time support plugin which allows you to specify time</p>
+                <input id="date4">
+                <select id="picker4_timezone" title="Select a value to to change the displayed timezone via setTimezone()"></select>
+                <div id="date4-utc"></div>
+                <div id="picker4"></div>
+
+                <script>
+                    var $input4 = $('#date4');
+                    var $utcRangeEl = $('#date4-utc');
+                    var $daterangepicker;
+                    var $timezoneSelect;
+                    var initialTimezone = 'Etc/UTC';
+
+                    function buildDateRangePicker(options) {
+                        var timezone = options.timezone;
+
+                        $input4.daterangepicker({
+                            startDate: moment().subtract({'h': 1}),
+                            endDate: moment(),
+                            timezone: timezone,
+                            plugins: [daterangepicker.timeSupport],
+                            presets: {
+                                '1hr': {
+                                    startDate: today.clone().subtract('hours', 1).format('YYYY-MM-DDTHH:mm'),
+                                    endDate: today.format('YYYY-MM-DDTHH:mm'),
+                                    specifyTime: true
+                                },
+                                '6hr': {
+                                    startDate: today.clone().subtract('hours', 6).format('YYYY-MM-DDTHH:mm'),
+                                    endDate: today.format('YYYY-MM-DDTHH:mm'),
+                                    specifyTime: true
+                                },
+                                today: {
+                                    startDate: todayStr,
+                                    endDate: todayStr
+                                },
+                                yesterday: {
+                                    startDate: yesterdayStr,
+                                    endDate: yesterdayStr
+                                },
+                                'last seven days': {
+                                    startDate: sevenDaysAgoStr,
+                                    endDate: todayStr
+                                }
+                            },
+                            timeSupport: {
+                                specifyTimeChecked: true
+                            },
+                            dateFormatter: function (startDate, endDate) {
+                                var picker = $('#date4').data('picker');
+                                var specifyTime = picker.$el.find('[name=specifyTime]').prop('checked');
+                                var format = specifyTime ? 'DD MMM YYYY, HH:mm' : 'DD MMM YYYY';
+                                var rangeUTC = startDate.tz('Etc/UTC').format(format) + ' - ' + endDate.tz('Etc/UTC').format(format);
+
+                                $utcRangeEl.text(rangeUTC + ' (UTC)');
+
+                                if (specifyTime) {
+                                    return startDate.tz(timezone).format(format) + ' - ' + endDate.tz(timezone).format(format);
+                                } else {
+                                    return startDate.tz(timezone).format(format) + ' - ' + endDate.tz(timezone).format(format);
+                                }
+                            }
+                        });
+
+                        $daterangepicker = $input4.data('picker');
+                    }
+
+                    buildDateRangePicker({
+                        timezone: initialTimezone
+                    });
+
+                    $timezoneSelect = $('#picker4_timezone');
+                    moment.tz.names().forEach(function(name){
+                        $('<option/>').text(name).val(name).appendTo($timezoneSelect);
+                    });
+
+                    $timezoneSelect.val(initialTimezone);
+                    $timezoneSelect.change(function() {
+                        $utcRangeEl.text('');
+                        $daterangepicker.destroy();
+                        $input4.val('');
+                        buildDateRangePicker({
+                            timezone: this.value
+                        });
+                    });
+                </script>
+            </div>
+
+            <div id="presetRange" class="demo">
+                <h2>Preset Date Range</h2>
+                <p>A datepicker instantiated with a start and end date</p>
+                <input id="date2">
+                <div id="picker2"></div>
+
+                <script>
+                    $('#date2').daterangepicker({
+                        startDate: '2012-12-24',
+                        endDate: '2012-12-31'
+                    });
+                </script>
+            </div>
+
+            <div id="datePresets" class="demo">
+                <h2>Preset Dates</h2>
+                <p>A datepicker instantiated with a list of preset date ranges</p>
+                <input id="date3">
+                <div id="picker3"></div>
+
+                <script>
+
+                    $('#date3').daterangepicker({
+                        presets: {
+                            today: {
+                                startDate: todayStr,
+                                endDate: todayStr
+                            },
+                            yesterday: {
+                                startDate: yesterdayStr,
+                                endDate: yesterdayStr
+                            },
+                            'last seven days': {
+                                startDate: sevenDaysAgoStr,
+                                endDate: todayStr
+                            }
+                        }
+                    });
+                </script>
+            </div>
+
+        </div>
+    </body>
+</html>

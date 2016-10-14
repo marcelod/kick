@@ -1,0 +1,29 @@
+{
+  "name": "timepicker",
+  "description": "time picker",
+  "version": "0.2.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BrandwatchLtd/timepicker.git"
+  },
+  "scripts": {
+    "test": "./unitTests",
+    "postinstall": "bower install",
+    "start": "echo Visit http://localhost:9009/tests/ to run unit tests, http://localhost:9009/demos/ to run demo; serve -p 9009"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "~1.7.9",
+    "mocha": "~2.5.3",
+    "serve": "~1.4.0",
+    "testem": "~1.9.0",
+    "phantomjs-prebuilt": "~2.1.7"
+  },
+  "optionalDependencies": {}
+}

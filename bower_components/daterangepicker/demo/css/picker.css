@@ -1,0 +1,157 @@
+body {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.picker {
+    border: solid 1px #AAA;
+    overflow:auto;
+    position:absolute;
+    background:#FFF;
+    z-index:999;
+}
+    .picker thead {
+        background-color: #F4F7FA;
+    }
+    .picker th{
+        color: #4B4B4B;
+        padding: 6px;
+        font-size: 10px;
+    }
+        .picker .month-title{
+            font-size: 13px;
+        }
+
+    .picker .startCalendar {
+        position: relative;
+        border-right: solid 1px #CCC;
+        display: table-cell;
+    }
+    .picker .endCalendar {
+        position: relative;
+        display: table-cell;
+    }
+
+.picker .calendar-wrapper{
+    display: table;
+}
+    .picker .calendar-wrapper-inner{
+        display: table-row;
+    }
+
+.picker td.day {
+    font-size: 13px;
+    text-align:center;
+    cursor: pointer;
+    padding: 6px;
+}
+    .picker td.day.selected{
+        background-color:#8D949C;
+        color:#FFF;
+    }
+        .picker td.day.selected .marker{
+            font-size: 10px;
+        }
+.picker td.inRange{
+    background-color:#F0F0F2;
+}
+.picker td.grey{
+    color: #CCC;
+}
+.picker .calendar-footer{
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    border-top: solid 1px #CCC;
+    padding: 6px 12px;
+    text-align: right;
+}
+.picker .calendar-footer button.done{
+    background-color: #4c9ef5;
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    color: #fff;
+    border: 1px solid #4892e0;
+    border-radius: 2px;
+    padding: 3px 12px;
+}
+}
+.picker .calendar-footer button.done:hover{
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%),
+                      linear-gradient(top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%),
+                      -o-linear-gradient(top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%),
+                      -moz-linear-gradient(top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%),
+                      -webkit-linear-gradient(top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 100%),
+                      -ms-linear-gradient(top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+}
+.picker .calendar-footer button.done:active{
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+    color: #eee;
+}
+.picker .presets-wrapper {
+    display:table;
+    overflow: auto;
+    width:100%;
+    border-bottom: solid 1px #CCC;
+    padding: 10px 0;
+}
+.picker .presets {
+    display: table-row;
+    float:right;
+}
+    .picker .presets h1{
+        display: table-cell;
+        font-size: 13px;
+        font-weight: normal;
+        color:#B2B2B2;
+        line-height: 20px;
+        margin: 0;
+        padding: 0 10px 0 0;
+    }
+    .picker .presets ul {
+        display: table-cell;
+        vertical-align: bottom;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .picker .presets li {
+        float: left;
+        font-size: 13px;
+        color: #1F8DC4;
+        padding:0 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+        .picker .presets li:hover {
+            text-decoration: underline;
+        }
+
+.picker .calendar-label{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 30px;
+    font-size: 10px;
+    color: #FFF;
+}
+.picker .startCalendar .calendar-label{
+    background-color: #6DB400;
+}
+.picker .endCalendar .calendar-label{
+    background-color: #8D949C;
+}
