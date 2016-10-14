@@ -1,4 +1,10 @@
-# CI-AdminLTE v1.4.3
+# What is Kick
+
+Kick is a project to start a site with some features using Codeigniter, HMVC, IonAuth, Composer, Bower, etc.
+
+But has a lot to be done yet.
+
+This is a fork [CI-AdminLTE](https://github.com/domProjects/CI-AdminLTE)
 
 ## Demo
 
@@ -26,3 +32,7 @@ Support for most major browsers including Chrome, Firefox, IE9+, Opera and Safar
 | Ion Auth | 2.6.0 | [Website](http://benedmunds.com/ion_auth) | [Github](https://github.com/benedmunds/CodeIgniter-Ion-Auth)
 | jQuery | 2.2.4 | [Website](http://jquery.com) | [Github](https://github.com/jquery/jquery)
 | Font Awesome | 4.6.3 | [Website](http://fortawesome.github.io/Font-Awesome/) | [Github](https://github.com/FortAwesome/Font-Awesome)
+
+## Theme
+
+  * Site: [startbootstrap-modern-business](https://github.com/IronSummitMedia/startbootstrap-modern-business)
