@@ -238,7 +238,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <li>
                             <a href="<?php echo site_url('admin_lte/dash/v1'); ?>">
-                                <i class="fa fa-diamond"></i> AdminLTE</span>
+                                <i class="fa fa-diamond"></i> <span>AdminLTE</span>
+                            </a>
+                        </li>
+
+
+                        <li class="header text-uppercase">New</li>
+
+                        <li class="<?=active_link_controller('crud')?>">
+                            <a href="<?php echo site_url('admin/crud'); ?>">
+                                <i class="fa fa-cubes"></i> <span>Crud</span>
                             </a>
                         </li>
 
