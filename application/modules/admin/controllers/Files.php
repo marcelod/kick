@@ -7,6 +7,8 @@ class Files extends Admin_Controller {
     {
         parent::__construct();
 
+        $this->load->helper('file');
+
         /* Title Page :: Common */
         $this->page_title->push(lang('menu_files'));
         $this->data['pagetitle'] = $this->page_title->show();
@@ -33,8 +35,12 @@ class Files extends Admin_Controller {
 
 	public function do_upload()
 	{
+        # create directory to files
+        $directory = $this->config->item('path_upload');
+        make_folder($directory);
+
         /* Conf */
-        $config['upload_path']      = './upload/';
+        $config['upload_path']      = $directory;
         $config['allowed_types']    = 'gif|jpg|png';
         $config['max_size']         = 2048;
         $config['max_width']        = 1024;

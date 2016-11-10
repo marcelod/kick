@@ -17,7 +17,7 @@ class MY_Controller extends MX_Controller {
         $this->load->config('dp_language');
         $this->load->config('assets');
         $this->load->library(array('form_validation', 'ion_auth', 'template', 'common/mobile_detect'));
-        $this->load->helper(array('array', 'language', 'url'));
+        $this->load->helper(array('array', 'language', 'url', 'many'));
         $this->load->model('common/prefs_model');
 
         /* Data */

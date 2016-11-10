@@ -34,3 +34,6 @@ $config['breadcrumb_el_first'] = '<i class="fa fa-dashboard"></i>';
 $config['breadcrumb_el_last']  = '<li class="active">';
 
 
+
+/* version system - http://semver.org */
+$config['version_sys'] = '0.0.1';
